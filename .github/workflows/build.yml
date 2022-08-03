@@ -1,0 +1,16 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
+    steps:
+      - uses: aquiladev/ipfs-action@v0.1.1
+        id: upload
+        with:
+          path: ./build
