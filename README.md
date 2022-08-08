@@ -33,7 +33,14 @@ its underlying technology.
 
 - Layer 1 vs Layer 2 in CrunchDAO
 
-- Understand and document Udit work;
+- Understand and document Udit work:
+    -  [Barra Risk Factor Analysis](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp);
+    -  [Idiosyncratic Risk](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp);
+    -  [Risk-Adjusted Return](https://www.investopedia.com/terms/r/riskadjustedreturn.asp);
+    -  [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp)
+
+
+
 - Digest and document "Crowdsourced Investment Research Through Tournaments" and Lopez de Prado more in general;
 - How can people add different datasets? 
 
