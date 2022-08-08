@@ -37,8 +37,8 @@ its underlying technology.
     -  [Barra Risk Factor Analysis](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp);
     -  [Idiosyncratic Risk](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp);
     -  [Risk-Adjusted Return](https://www.investopedia.com/terms/r/riskadjustedreturn.asp);
-    -  [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp)
-
+    -  [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp);
+    - [Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
 
 
 - Digest and document "Crowdsourced Investment Research Through Tournaments" and Lopez de Prado more in general;
