@@ -3,7 +3,6 @@
 ## Introduction 
 
 ## Methodology 
-
 ### Related Projects
 
 - [DeSci Nodes](https://desci.com/nodes)
