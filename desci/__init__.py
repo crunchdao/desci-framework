@@ -1,4 +1,3 @@
-# type: ignore[attr-defined]
 """`desci` is the Python cli/package for Decentralized Science by CrunchDAO"""
 
 import sys
