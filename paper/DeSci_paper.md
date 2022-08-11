@@ -3,7 +3,7 @@
 ## Introduction 
 
 ## Methodology 
-### Related Projects
+### Reference Projects
 
 - [DeSci Nodes](https://desci.com/nodes)
 - [Peer Review](https://github.com/danielBingham/peerreview)
@@ -12,3 +12,5 @@
 - [DeSci World](https://desci.world/)
 - [IPLD](https://ipld.io/)
 - [Radicle](https://radicle.xyz/)
+- [openjournals-draft-action](https://github.com/openjournals/openjournals-draft-action)
+- [inara](https://github.com/openjournals/inara)
