@@ -7,7 +7,7 @@ default_context:
   license: "MIT"
   minimal_python_version: 3.9
   github_name: "crunchdao"
-  email: "placeholder@crunchdao.com"
+  email: "crew@crunchdao.com"
   version: "0.1.0"
   line_length: "88"
   create_example_template: "cli"
