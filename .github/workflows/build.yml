@@ -45,4 +45,5 @@ jobs:
       run: |
         cd paper
         sudo apt-get -y install pandoc
+        sudo apt-get install pandoc-citeproc
         pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib  -o paper.pdf
