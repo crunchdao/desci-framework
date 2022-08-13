@@ -53,5 +53,7 @@ jobs:
     - name: Save Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
-        path: paper/paper.html
+        name: paper
+        path: |
+          paper/paper.html
+          paper/paper.pdf
