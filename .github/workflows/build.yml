@@ -47,4 +47,5 @@ jobs:
         sudo apt-get -y install pandoc
         sudo apt-get install pandoc-citeproc
         sudo apt-get install texlive-latex-base
+        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib -o paper.html
         pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib  -o paper.pdf
