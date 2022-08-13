@@ -40,3 +40,8 @@ jobs:
     - name: Run safety checks
       run: |
         make check-safety
+    
+    - name: Build PDF and HTML paper
+      run: |
+        cd paper
+        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib  -o paper.pdf
