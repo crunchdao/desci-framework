@@ -1,0 +1,14 @@
+to: latex
+pdf-engine: latexmk
+pdf-engine-opt: -lualatex
+output-file: paper.pdf
+filters:
+  - type: lua
+    path: draft.lua
+  - type: lua
+    path: self-citation.lua
+variables:
+  # styling options
+  colorlinks: true
+  linkcolor: '[rgb]{0.0, 0.5, 1.0}'
+  urlcolor: '[rgb]{0.0, 0.5, 1.0}'
