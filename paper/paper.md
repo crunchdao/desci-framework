@@ -1,28 +1,15 @@
 ---
 title: >-
-    Article Writing with Markdown and the Open Journals publishing pipeline
+    A Decentralized Science framework for CrunchDAO
 authors:
-  - name: Albert Krewinkel
+  - name: Matteo Manzi
     email: albert@zeitkraut.de
-    affiliation: [1, 2]
+    affiliation: [1]
     orcid: 0000-0002-9455-0796
     corresponding: true
-  - name: Juanjo Bazán
-    orcid: 0000-0001-7699-3983
-    affiliation: [1]
-    equal-contrib: true
-  - name: Arfon M. Smith
-    orcid: 0000-0002-3957-2474
-    affiliation: [1, 3]
-    equal-contrib: true
 affiliations:
   - index: 1
-    name: Open Journals
-  - index: 2
-    name: Pandoc Development Team
-  - index: 3
-    name: GitHub
-date: 2022-06-29
+    name: CrunchDAO
 bibliography: paper.bib
 tags:
   - reference
@@ -31,7 +18,7 @@ tags:
   - publishing
 ---
 
-# Hi Jean, how is it going?
+# Bella Ste!
 
 This article describes the features of the Journal of Open Source
 Software [@smith2018] publishing pipeline. The publishing method
