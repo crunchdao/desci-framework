@@ -44,4 +44,5 @@ jobs:
     - name: Build PDF and HTML paper
       run: |
         cd paper
+        apt-get -y install pandoc
         pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib  -o paper.pdf
