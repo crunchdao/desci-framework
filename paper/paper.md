@@ -187,11 +187,6 @@ cat](nyan-cat.png){height="9pt"}` includes the image "nyan-cat.png"
 ![Nyan cat](nyan-cat.png){height="9pt"} while scaling it to a height of
 9 pt.
 
-
-![The "Mandrill" standard test image, sometimes erroneously called
-"Baboon", is a popular sample photo and used in image processing
-research.](mandrill.jpg){#fig:mandrill}
-
 ### Citations
 
 Bibliographic data should be collected in a file `paper.bib`; it

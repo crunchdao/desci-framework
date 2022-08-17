@@ -345,6 +345,7 @@ $endif$
 $endif$
 
 \begin{document}
+
 $if(title)$
 $if(beamer)$
 \frame{\titlepage}
