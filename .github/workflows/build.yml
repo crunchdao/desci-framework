@@ -47,8 +47,8 @@ jobs:
         sudo apt-get -y install pandoc
         sudo apt-get install pandoc-citeproc
         sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
-        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib --template ./data/templates/default.latex -o paper.html
-        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib --template ./data/templates/default.latex -o paper.pdf
+        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib -o paper.html
+        pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib -o paper.pdf
 
     - name: Save Artifact
       uses: actions/upload-artifact@v3
