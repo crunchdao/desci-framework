@@ -3,9 +3,9 @@ title: >-
     A Decentralized Science framework for CrunchDAO
 authors:
   - name: Matteo Manzi
-    email: albert@zeitkraut.de
+    email: matteomanzi09@gmail.com
     affiliation: [1]
-    orcid: 0000-0002-9455-0796
+    orcid: 0000-0002-5229-0746
     corresponding: true
 affiliations:
   - index: 1
@@ -18,25 +18,109 @@ tags:
   - publishing
 ---
 
-# Bella Ste!
+# Introduction 
+
+## Reference Projects
+
+- [DeSci Nodes](https://desci.com/nodes)
+- [Peer Review](https://github.com/danielBingham/peerreview)
+- [Ants-Review](https://arxiv.org/abs/2101.09378)
+- PRINCIPIA: a Decentralized Peer-Review Ecosystem: [paper](https://arxiv.org/pdf/2008.09011.pdf) and [article](https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here)
+- [DeSci World](https://desci.world/)
+- [IPLD](https://ipld.io/)
+- [Radicle](https://radicle.xyz/)
+- [openjournals-draft-action](https://github.com/openjournals/openjournals-draft-action)
+- [inara](https://github.com/openjournals/inara)
+
+## DeSci framework for decentralized paper writing
+
+In the process of setting this up, document design choices and use them to populate a first paper talking about 
+its underlying technology.
+
+- Integrate LaTeX/Markedown + Python.
+- Generate papers with github actions.
+- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
+
+- Integrate ResearchRabbit or something like it;
+- Integrate SciHub, libgen and others in the backend.
+- Integrate knowledge graphs, once out, from [Lateral](https://www.lateral.io/)
+
+## The research paper(s) V1.0: Cover the CrunchDAO investment rationale
+
+- Start from website+documentation, 2 medium articles, CrunchDAO website. 
+- Study NumerAI and RocketCapital and understand differences.
+- Record long technical deep talk with Jean to understand everything.
+
+- Layer 1 vs Layer 2 in CrunchDAO
+
+- Understand and document Udit work:
+    -  [Barra Risk Factor Analysis](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp);
+    -  [Idiosyncratic Risk](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp);
+    -  [Risk-Adjusted Return](https://www.investopedia.com/terms/r/riskadjustedreturn.asp);
+    -  [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp);
+    - [Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+
+
+- Digest and document "Crowdsourced Investment Research Through Tournaments" and Lopez de Prado more in general;
+- How can people add different datasets? 
+
+# Aggregate the scientific community
+
+Filter these in the subsections below:
+
+- Kind of council of elders of top crunchers: identify and engage top scientific profile from the community 
+- Allow elders to interact with the research paper in a DeSci way 
+- Orchestrate the call for signal and Cherry peek the best signals 
+
+- Work on the definition of KPIs. Some ideas: 
+    - Number of interaction on the paper
+    - Median signal performance (Sharpe, ROI, DD)
+    - Number of interaction with the podcasts.
+    - Some way to evaluate the engagement of the syndacate.
+
+
+
+## NFTs
+
+At the beginning, we gift an NFT to people we want as advisors and having one leads to being able to give a feedback on the paper. See [here](https://www.boffinsociety.xyz/) and [here](https://desci.world/). This will allow people to join the GROUP OF COOL PEOPLE YET TO BE NAMED (Mathematical syndicate?).
+
+The NFTs could be about stochastic processes (video+audio), and about financial models more in general.
+
+Then we vote with tokens to decide whether the pull request on the paper is accepted or not. Voting on the papers shall become part of civil duties. How will be individual decisions be integrated into the final one? More token more power, one head one vote? Or something fancy like ["A Flexible Design for Funding Public Goods"](https://arxiv.org/abs/1809.06421). Or something like [this](https://www.bretthennig.com/reinvigorating_democracy_through_random_selection)?
+
+What is the role of SBTs here? Decentralized Society: Finding Web3’s Soul.
+
+The outcome of the peer review changes your grade in the DAO which changes your access to the APY, Alternative idea, you stake on the pull request and if it is bad you lose.
+
+For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
+
+## Social Presence (Talk with Ben for this)
+
+- Stardust Podcast (or alternative one?) The crunch podcast ? 2 / month? Maybe call it Matteo podcast and talk about CrunchDAO. Talk about the models, talk about the results. 
+- LinkedIn
+- Twitter
+- Medium, or maybe [Mirror](https://mirror.xyz/) better?
+- Youtube
+- Anchor
+
+# R&D finance
+
+- The research paper(s) V1.0: Cover the CrunchDAO investment rationale 
+- Iterate once every 4 weeks on a new update of the paper 
+- KPIs
+    - MM Sharpe
+    - Backtest
+        - MM ROI - backtest
+        - MM DD - backtest
+        - Competition OWEN and Spearman
+
+# Methodology
 
 This article describes the features of the Journal of Open Source
 Software [@smith2018] publishing pipeline. The publishing method
 is similar to the model described by @krewinkel2017, in that
 Markdown is used as the input format. The author-provided files
 serves as the source for all generated publishing artifacts.
-
-Apart from the main text, articles should also provide a metadata
-section at the beginning of this article is formatted using
-[YAML], a human-friendly data serialization language
-[@yaml_website]. This information is included in the title and
-sidebar of the generated PDF.
-
-Authors who face difficulties while writing are referred to the
-paper by @upper1974.
-
-[YAML]: https://yaml.org
-
 
 # Statement of Need
 
@@ -48,11 +132,6 @@ publication in that journal. However, submission requirements do not
 help with the technical aspects of paper writing. The process for JOSS
 and similar journals is different, in that the paper should be written
 in the lightweight markup language *Markdown*.
-
-This article explains the technical details and describes the publishing
-system's capabilities. It can also be used as a test document, or serve
-as a template that can be used as a starting point.
-
 # Markdown primer
 
 Markdown is based on email conventions. It was developed by John Gruber
@@ -88,18 +167,6 @@ below gives a small example.
 +---------------------+-------------------------+-----------------------+
 
 : Basic inline markup and examples.
-
-### Links
-
-Link syntax is `[link description](targetURL)`. E.g., this link to the
-[Journal of Open Source Software](https://joss.theoj.org/) is written as \
-`[Journal of Open Source Software](https://joss.theoj.org/)`.
-
-Open Journal publications are not limited by the constraints of print
-publications. We encourage authors to use hyperlinks for websites and
-other external resources. However, the standard scientific practice of
-citing the relevant publications should be followed regardless.
-
 ### Images
 
 Markdown syntax for an image is that of a link, preceded by an
@@ -112,12 +179,6 @@ as a figure if
    label and
 2. it is the only element in a paragraph, i.e., it must be surrounded by
    blank lines.
-   
-Example:
-
-```markdown
-![Figure caption](path/to/image.png)
-```
 
 Images that are larger than the text area are scaled to fit the page. It
 can sometimes be useful to give images an explicit height and/or width,
@@ -145,26 +206,6 @@ a case study on writers block, see @upper1974." Please refer to
 the [pandoc manual](https://pandoc.org/MANUAL#extension-citations)
 for additional features, including page locators, prefixes,
 suffixes, and suppression of author names in citations.
-
-### Mathematical Formulæ
-
-Equations and other math content has is marked by dollar signs (`$`). A
-single dollar sign should be used for math that will appear directly
-within the text, and `$$` should be used when the formula is to be
-presented in "display" style, i.e., centered and on a separate line. The
-formula itself must be given using TeX syntax.
-
-To give some examples: When discussing a variable $x$ or a short formula
-like $\sin \frac{\pi}{2}$, we would write `$x$` and `$\sin
-\frac{\pi}{2}$`, respectively. However, for more complex formulæ,
-display style is more appropriate. Writing `$$\int_{-\infty}^{+\infty}
-e^{-x^2} \, dx = \sqrt{\pi}$$` will give us
-
-$$\int_{-\infty}^{+\infty} e^{-x^2} \, dx = \sqrt{\pi}$$
-
-Numbered equations and internal cross-references are discussed
-[futher below][Equations].
-
 ### Footnotes
 
 Syntax for footnotes centers around the "caret" character `^`. The
@@ -195,50 +236,10 @@ The above example results in the following output:
 > [^1]: An open license that allows reuse.
 
 
-## Blocks
-
-The larger components of a document are called "blocks".
-
-### Headings
-
-Headings are added with `#` followed by a space, where each additional
-`#` demotes the heading to a level lower in the hierarchy:
-
-```markdown
-# Section
-
-## Subsection
-
-### Subsubsection
-```
-
-Please start headings on the first level. The maximum supported level is
-5, but paper authors should usually try to limit themselves to headings
-of the first two or three levels.
-
-#### Deeper nesting
-
-Forth- and fifth-level subsections – like this one and the following
-heading – are supported by the system; however, their use is
-discouraged.
-
-##### Avoiding excessive nesting
-
-Usually [lists], as described in the next section, should be preferred
-over forth- and fifth-level headings.
-
-
 ### Lists
 
 Bullet lists and numbered lists, a.k.a. enumerations, offer an
 additional method to present sequential and hierarchical information.
-
-``` markdown
-- apples
-- citrus fruits
-  - lemons
-  - oranges
-```
 
 - apples
 - citrus fruits
@@ -250,109 +251,12 @@ first two [laws of
 thermodynamics](https://en.wikipedia.org/wiki/Laws_of_thermodynamics) as
 example.
 
-``` markdown
 0. If two systems are each in thermal equilibrium with a third, they are
    also in thermal equilibrium with each other.
 1. In a process without transfer of matter, the change in internal
    energy, $\Delta U$, of a thermodynamic system is equal to the energy
    gained as heat, $Q$, less the thermodynamic work, $W$, done by the
    system on its surroundings. $$\Delta U = Q - W$$
-```
-
-Rendered:
-
-0. If two systems are each in thermal equilibrium with a third, they are
-   also in thermal equilibrium with each other.
-1. In a process without transfer of matter, the change in internal
-   energy, $\Delta U$, of a thermodynamic system is equal to the energy
-   gained as heat, $Q$, less the thermodynamic work, $W$, done by the
-   system on its surroundings. $$\Delta U = Q - W$$
-
-
-# Article metadata
-
-## Names
-
-Providing an author name is straight-forward: just set the `name`
-attribute. However, sometimes fine-grained control over the name
-is required.
-
-### Name parts
-
-There are many ways to describe the parts of names; we support the
-following:
-
-- given names,
-- surname,
-- dropping particle,
-- non-dropping particle,
-- and suffix.
-
-We use a heuristic to parse names into these components. This
-parsing may produce the wrong result, in which case it is
-necessary to provide the relevant parts explicitly.
-
-The respective field names are
-
-- `given-names` (aliases: `given`, `first`, `firstname`)
-- `surname` (aliases: `family`)
-- `suffix`
-
-The full display name will be constructed from these parts, unless
-the `name` attribute is given as well.
-
-### Particles
-
-It's usually enough to place particles like "van", "von", "della",
-etc. at the end of the given name or at the beginning of the
-surname, depending on the details of how the name is used.
-
-- `dropping-particle`
-- `non-dropping-particle`
-
-### Literal names
-
-The automatic construction of the full name from parts is geared
-towards common Western names. It may therefore be necessary
-sometimes to provide the display name explicitly. This is possible
-by setting the `literal` field,
-e.g., `literal: Tachibana Taki`. This feature should only be used
-as a last resort. <!-- e.g., `literal: 宮水 三葉`. -->
-
-### Example
-
-```yaml
-authors:
-  - name: John Doe
-    affiliation: '1'
-
-  - given-names: Ludwig
-    dropping-particle: van
-    surname: Beethoven
-    affiliation: '3'
-
-  # not recommended, but common aliases can be used for name parts.
-  - given: Louis
-    non-dropping-particle: de
-    family: Broglie
-    affiliation: '4'
-```
-
-The name parts can also be collected under the author's `name`:
-
-``` yaml
-authors:
-  - name:
-      given-names: Kari
-      surname: Nordmann
-```
-
-  <!-- - name: -->
-  <!--     literal: 立花 瀧 -->
-  <!--     given-names: 瀧 -->
-  <!--     surname: 立花 -->
-
-
 # Internal references
 
 Markdown has no default mechanism to handle document internal
@@ -417,7 +321,7 @@ $$ \rho(x) = 3$$
 
 Wow, also Joseph is here! I am showing you how we can discuss about fractional calculus in html!
 
-# Behind the scenes
+# Pandoc
 
 Readers may wonder about the reasons behind some of the choices made for
 paper writing. Most often, the decisions were driven by radical
