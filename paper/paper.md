@@ -3,7 +3,7 @@ title: >-
     A Decentralized Science framework for CrunchDAO
 authors:
   - name: Matteo Manzi
-    email: matteomanzi09@gmail.com
+    email: matteo.manzi@crunchdao.com
     affiliation: [1]
     orcid: 0000-0002-5229-0746
     corresponding: true
