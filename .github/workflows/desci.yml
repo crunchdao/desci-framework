@@ -1,6 +1,6 @@
 name: desci
 
-on: [pull_request, push] # remove push if working. 
+on: [pull_request] 
 
 jobs:
   build:
