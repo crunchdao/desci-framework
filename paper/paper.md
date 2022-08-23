@@ -48,10 +48,12 @@ its underlying technology.
 ## The research paper(s) V1.0: Cover the CrunchDAO investment rationale
 
 - Start from website+documentation, 2 medium articles, CrunchDAO website. 
-- Study NumerAI and RocketCapital and understand differences.
+- Study NumerAI and RocketCapital and understand differences, Judge Research.
 - Record long technical deep talk with Jean to understand everything.
 
 - Layer 1 vs Layer 2 in CrunchDAO
+
+### Metamodeling Layer 1
 
 - Understand and document Udit work:
     -  [Barra Risk Factor Analysis](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp);
