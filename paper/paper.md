@@ -1,21 +1,18 @@
 ---
-title: >-
-    A Decentralized Science framework for CrunchDAO
-authors:
-  - name: Matteo Manzi
-    email: matteo.manzi@crunchdao.com
-    affiliation: [1]
-    orcid: 0000-0002-5229-0746
-    corresponding: true
-affiliations:
-  - index: 1
-    name: CrunchDAO
-bibliography: paper.bib
-tags:
-  - reference
-  - example
-  - markdown
-  - publishing
+title: "A Decentralized Science framework for CrunchDAO"
+author: [Matteo Manzi]
+date: "2022-08-27"
+lang: "en"
+titlepage: true,
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "360049"
+titlepage-rule-height: 0
+titlepage-background: "./figures/background.pdf"
+
+header-left: "\\hspace{1cm}"
+header-right: "Page \\thepage"
+footer-left: "\\thetitle"
+footer-right: "\\theauthor"
 ---
 
 # Introduction 
@@ -32,6 +29,35 @@ tags:
 - [openjournals-draft-action](https://github.com/openjournals/openjournals-draft-action)
 - [inara](https://github.com/openjournals/inara)
 
+```java
+public class Example implements LoremIpsum {
+	public static void main(String[] args) {
+		if(args.length < 2) {
+			System.out.println("Lorem ipsum dolor sit amet");
+		}
+	} // Obscura atque coniuge, per de coniunx
+}
+```
+
+\begin{equation}\label{eq:neighbor-propability}
+    p_{ij}(t) = \frac{\ell_j(t) - \ell_i(t)}{\sum_{k \in N_i(t)}^{} \ell_k(t) - \ell_i(t)}
+\end{equation}
+
+Test Nr. | Position | Radius | Rot | Grün | Blau | beste Fitness | Abweichung |
+|---|---|---|---|---|---|---|---|
+1 |  20 % |  20 % |  20 % |  20 % |  20 % |  7,5219 |  0,9115 |
+2 |   0 % |  25 % |  25 % |  25 % |  25 % |  8,0566 |  1,4462 |
+3 |   0 % |   0 % |  33 % |  33 % |  33 % |  8,7402 |  2,1298 |
+4 |  50 % |  20 % |  10 % |  10 % |  10 % |  6,6104 |  0,0000 |
+5 |  70 % |   0 % |  10 % |  10 % |  10 % |  7,0696 |  0,4592 |
+6 |  20 % |  50 % |  10 % |  10 % |  10 % |  7,0034 |  0,3930 |
+7 |  40 % |  15 % |  15 % |  15 % |  15 % |  6,9122 |  0,3018 |
+
+```python
+a = 3
+for i in range(6):
+  print(a)
+```
 ## DeSci framework for decentralized paper writing
 
 In the process of setting this up, document design choices and use them to populate a first paper talking about 
@@ -79,8 +105,7 @@ Filter these in the subsections below:
     - Median signal performance (Sharpe, ROI, DD)
     - Number of interaction with the podcasts.
     - Some way to evaluate the engagement of the syndacate.
-
-
+    
 
 ## NFTs
 
@@ -115,25 +140,7 @@ For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
         - MM ROI - backtest
         - MM DD - backtest
         - Competition OWEN and Spearman
-
-# Methodology
-
-This article describes the features of the Journal of Open Source
-Software [@smith2018] publishing pipeline. The publishing method
-is similar to the model described by @krewinkel2017, in that
-Markdown is used as the input format. The author-provided files
-serves as the source for all generated publishing artifacts.
-
-# Statement of Need
-
-The journal publisher, in most cases where you'd be reading this, Open
-Journals, maintains a detailed and helpful
-[article](https://joss.readthedocs.io/en/latest/submitting.html) on the
-requirements that articles must satisfy in order to be considered for
-publication in that journal. However, submission requirements do not
-help with the technical aspects of paper writing. The process for JOSS
-and similar journals is different, in that the paper should be written
-in the lightweight markup language *Markdown*.
+        
 # Markdown primer
 
 Markdown is based on email conventions. It was developed by John Gruber
@@ -182,13 +189,6 @@ as a figure if
 2. it is the only element in a paragraph, i.e., it must be surrounded by
    blank lines.
 
-Images that are larger than the text area are scaled to fit the page. It
-can sometimes be useful to give images an explicit height and/or width,
-e.g. when adding an image as part of a paragraph. The Markdown `![Nyan
-cat](nyan-cat.png){height="9pt"}` includes the image "nyan-cat.png"
-![Nyan cat](nyan-cat.png){height="9pt"} while scaling it to a height of
-9 pt.
-
 ### Citations
 
 Bibliographic data should be collected in a file `paper.bib`; it
@@ -197,13 +197,14 @@ is acceptable as well. All major citation managers offer to export
 these formats.
 
 Cite a bibliography entry by referencing its identifier:
-`[@upper1974]` will create the reference "[@upper1974]". Omit the
+ will create the reference "[@upper1974]". Omit the
 brackets when referring to the author as part of a sentence: "For
 a case study on writers block, see @upper1974." Please refer to
 the [pandoc manual](https://pandoc.org/MANUAL#extension-citations)
 for additional features, including page locators, prefixes,
 suffixes, and suppression of author names in citations.
 ### Footnotes
+
 
 Syntax for footnotes centers around the "caret" character `^`. The
 symbol is also used as a delimiter for superscript text and thereby
@@ -263,12 +264,6 @@ writing experience. This includes convenient cross-reference generation,
 which is why a limited set of LaTeX commands are supported. In a
 nutshell, elements that were marked with `\label` and can be referenced
 with `\ref` and `\autoref`.
-
-[Open Journals]: https://theoj.org
-
-![View of coastal dunes in a nature reserve on Sylt, an island in the
-North Sea. Sylt (Danish: *Slid*) is Germany's northernmost
-island.](sylt.jpg){#sylt width="100%"}
 
 ## Tables and figures
 

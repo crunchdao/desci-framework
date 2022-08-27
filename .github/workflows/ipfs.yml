@@ -1,0 +1,14 @@
+name: ipfs
+
+on: [push] 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: aquiladev/ipfs-action@master
+    with:
+    path: ./build
+    service: pinata
+    pinataKey: bf0227ab0ea28c5aa6ac # ${{ secrets.PINATA_KEY }}
+    pinataSecret: 81fdc95be054a6d1846b23a0ee162e61501a3daef31a244de5194bb0bfaa63a6 # ${{ secrets.PINATA_SECRET }}
