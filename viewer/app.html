@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeSci</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: calc(100% - 7px);
+            border: 0;
+        }
+
+        *::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #202020;
+            border-left: 1px solid #2c2c2c;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: #3e3e3e;
+            border: solid 3px #202020;
+            border-radius: 7px;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-app-bar app>
+                <v-list-item class="pl-0">
+                    <v-list-item-avatar>
+                        <v-img src="/assets/logo.png"></v-img>
+                    </v-list-item-avatar>
+                    <v-list-item-content>
+                        <v-list-item-title> Latest Update: {{ timestamp }} </v-list-item-title>
+                        <v-list-item-subtitle> Commit: <a :href="toCommit">{{ commitId }}</a> </v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-spacer></v-spacer>
+                <v-btn icon :href="repository">
+                    <v-icon>mdi-github</v-icon>
+                </v-btn>
+            </v-app-bar>
+            <v-main app>
+                <iframe src="/paper.pdf"></iframe>
+            </v-main>
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify({
+                theme: { dark: true },
+            }),
+            data: {
+                repository: "https://github.com/crunchdao/desci",
+                info: null
+            },
+            computed: {
+                toCommit() {
+                    const { repository, commitId } = this
+
+                    return `${repository}/commit/${commitId}`
+                },
+                commitId() {
+                    return this.info?.id
+                },
+                timestamp() {
+                    const timestamp = this.info?.timestamp
+
+                    if (!timestamp) {
+                        return null
+                    }
+
+                    return new Date(timestamp).toLocaleString()
+                }
+            },
+            mounted() {
+                fetch("/info.json")
+                    .then((response) => response.json())
+                    .then((data) => this.info = data)
+                    .catch(console.error)
+            }
+        })
+    </script>
+</body>
+
+</html>
