@@ -13,6 +13,8 @@ app = flask.Flask(__name__)
 COMMITS_DIRECTORY = "commits"
 LATEST_DIRECTORY_NAME = "latest"
 
+ARTEFACT_NAME = "paper"
+
 PAPER_PDF_FILE = "paper.pdf"
 INFO_JSON_FILE = "info.json"
 
@@ -81,9 +83,9 @@ def webhook():
     artifacts_url = workflow["artifacts_url"]
     artifacts = requests.get(artifacts_url).json()["artifacts"]
 
-    artefact = next(filter(lambda x: x["name"] == "paper", artifacts), None)
+    artefact = next(filter(lambda x: x["name"] == ARTEFACT_NAME, artifacts), None)
     if artefact is None:
-        return "paper artifact not found"
+        return f"{ARTEFACT_NAME} artifact not found"
 
     archive_download_url = artefact["archive_download_url"]
     zip = zipfile.ZipFile(
@@ -96,7 +98,7 @@ def webhook():
     )
 
     if PAPER_PDF_FILE not in zip.namelist():
-        return "paper.pdf not in the zip"
+        return f"{PAPER_PDF_FILE} not in the zip"
 
     commit_directory = get_commit_directory(commit_id)
     os.makedirs(commit_directory, exist_ok=True)
