@@ -42,9 +42,11 @@
         <v-app>
             <v-app-bar app>
                 <v-list-item class="pl-0">
-                    <v-list-item-avatar>
-                        <v-img src="/assets/logo.png"></v-img>
-                    </v-list-item-avatar>
+                    <a href="https://crunchdao.com">
+                        <v-list-item-avatar>
+                            <v-img src="/assets/logo.png"></v-img>
+                        </v-list-item-avatar>
+                    </a>
                     <v-list-item-content>
                         <v-list-item-title> Latest Update: {{ timestamp }} </v-list-item-title>
                         <v-list-item-subtitle> Commit: <a :href="toCommit">{{ commitId }}</a> </v-list-item-subtitle>
