@@ -20,11 +20,11 @@ PAPER_PDF_FILE = "paper.pdf"
 INFO_JSON_FILE = "info.json"
 
 
-def get_commit_directory(commit_id: str):
+def get_commit_directory(commit_id: str) -> str:
     return f"{COMMITS_DIRECTORY}/{commit_id}"
 
 
-def validate_signature(response: flask.Request, secret):
+def validate_signature(response: flask.Request, secret: str) -> bool:
     """
     derived from: https://gist.github.com/andrewfraley/0229f59a11d76373f11b5d9d8c6809bc
     """

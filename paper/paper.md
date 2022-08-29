@@ -1,21 +1,30 @@
 ---
-title: "A Decentralized Science framework for CrunchDAO"
-author: [Matteo Manzi]
-date: "2022-08-27"
+title: ""
+author: []
+date: ""
 lang: "en"
 titlepage: true,
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "360049"
 titlepage-rule-height: 0
-titlepage-background: "./figures/background.pdf"
-
+titlepage-background: "./figures/cover.pdf"
 header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
-footer-left: "\\thetitle"
-footer-right: "\\theauthor"
+footer-left: "A Decentralized Science framework for CrunchDAO"
+footer-right: "Matteo Manzi"
 ---
 
-# Introduction 
+# List of contributors
+
+| Full Name | Github @ | Discord @ | Date |
+|----------|:---------------:|:-----------------:|------------|
+| Matteo Manzi | matteoettam09 | matteoettam09#9362 | 2022/08/27 |
+|||||
+|||||
+
+\newpage
+
+# A Decentralized Science framework 
 
 ## DeSci: an Overview
 
@@ -31,27 +40,37 @@ One of the requirements here was to go beyond traditional peer review, using Web
 
 Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/), building on Git and Ethereum to "enable developers to collaborate on software over a peer-to-peer network", [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens.
 
-## A Decentralized Science framework 
+## Design Choices
 
 The first requirements has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
 
-The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility.
+The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility. For example, there is a command called ```desci helloplot```:
 
+```python
+    """Hello Plot."""
+    # evenly sampled time at 200ms intervals
+    t = np.arange(0., 5., 0.2)
 
-- Integrate LaTeX/Markedown + Python.
+    # red dashes, blue squares and green triangles
+    plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+    plt.savefig('figures/helloplot.png')
+```
 
+ which can be used to produce this Figure:
+
+ ![helloplot](helloplot.png)
 
 The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
 
-Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer.
+Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer. If you prefer to work on your editor, you can work on a new branch and then open a pull request.
 
-- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
+\newpage
 
 ## The research paper(s) V1.0: Cover the CrunchDAO investment rationale
 
 - Start from website+documentation, 2 medium articles, CrunchDAO website. 
 - Study NumerAI and RocketCapital and understand differences, Judge Research.
-- Record long technical deep talk with Jean to understand everything.
+
 
 - Layer 1 vs Layer 2 in CrunchDAO
 
@@ -95,8 +114,6 @@ What is the role of SBTs here? Decentralized Society: Finding Web3’s Soul.
 
 The outcome of the peer review changes your grade in the DAO which changes your access to the APY, Alternative idea, you stake on the pull request and if it is bad you lose.
 
-For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
-
 ## Social Presence (Talk with Ben for this)
 
 - Stardust Podcast (or alternative one?) The crunch podcast ? 2 / month? Maybe call it Matteo podcast and talk about CrunchDAO. Talk about the models, talk about the results. 
@@ -116,192 +133,5 @@ For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
         - MM ROI - backtest
         - MM DD - backtest
         - Competition OWEN and Spearman
-
-### Images
-
-Markdown syntax for an image is that of a link, preceded by an
-exclamation mark `!`.
-
-The main use of images in papers is within figures. An image is treated
-as a figure if
-
-1. it has a non-empty description, which will be used as the figure
-   label and
-2. it is the only element in a paragraph, i.e., it must be surrounded by
-   blank lines.
-
-### Citations
-
-Bibliographic data should be collected in a file `paper.bib`; it
-should be formatted in the BibLaTeX format, although plain BibTeX
-is acceptable as well. All major citation managers offer to export
-these formats.
-
-Cite a bibliography entry by referencing its identifier:
- will create the reference "[@upper1974]". Omit the
-brackets when referring to the author as part of a sentence: "For
-a case study on writers block, see @upper1974." Please refer to
-the [pandoc manual](https://pandoc.org/MANUAL#extension-citations)
-for additional features, including page locators, prefixes,
-suffixes, and suppression of author names in citations.
-### Footnotes
-
-
-Syntax for footnotes centers around the "caret" character `^`. The
-symbol is also used as a delimiter for superscript text and thereby
-mirrors the superscript numbers used to mark a footnote in the final
-text.[^markers]
-
-``` markdown
-Articles are published under a Creative Commons license[^1].
-Software should use an OSI-approved license.
-
-[^1]: An open license that allows reuse.
-```
-
-Note numbers do not have to be sequential, they will be reordered
-automatically in the publishing step. In fact, the identifier of a note
-can be any sequence of characters, like `[^marker]`, but may not contain
-whitespace characters.
-
-[^markers]: Although it should be noted that some publishers prefer
-    symbols or letters as footnote markers.
-
-The above example results in the following output:
-
-> Articles are published under a Creative Commons license[^1].
-> Software should use an OSI-approved license.
->
-> [^1]: An open license that allows reuse.
-
-
-### Lists
-
-Bullet lists and numbered lists, a.k.a. enumerations, offer an
-additional method to present sequential and hierarchical information.
-
-- apples
-- citrus fruits
-  - lemons
-  - oranges
-
-Enumerations start with the number of the first item. Using the the
-first two [laws of
-thermodynamics](https://en.wikipedia.org/wiki/Laws_of_thermodynamics) as
-example.
-
-0. If two systems are each in thermal equilibrium with a third, they are
-   also in thermal equilibrium with each other.
-1. In a process without transfer of matter, the change in internal
-   energy, $\Delta U$, of a thermodynamic system is equal to the energy
-   gained as heat, $Q$, less the thermodynamic work, $W$, done by the
-   system on its surroundings. $$\Delta U = Q - W$$
-
-# Internal references
-
-Markdown has no default mechanism to handle document internal
-references, often called "cross-references". This conflicts with goal of
-[Open Journals] is to provide authors with a seamless and pleasant
-writing experience. This includes convenient cross-reference generation,
-which is why a limited set of LaTeX commands are supported. In a
-nutshell, elements that were marked with `\label` and can be referenced
-with `\ref` and `\autoref`.
-
-## Tables and figures
-
-Tables and figures can be referenced if they are given a *label*
-in the caption. In pure Markdown, this can be done by adding an
-empty span `[]{label="floatlabel"}` to the caption. LaTeX syntax
-is supported as well: `\label{floatlabel}`.
-
-Link to a float element, i.e., a table or figure, with
-`\ref{identifier}` or `\autoref{identifier}`, where `identifier`
-must be defined in the float's caption. The former command results
-in just the float's number, while the latter inserts the type and
-number of the referenced float. E.g., in this document
-`\autoref{proglangs}` yields "\autoref{proglangs}", while
-`\ref{proglangs}` gives "\ref{proglangs}".
-
-: Comparison of programming languages used in the publishing tool.
-  []{label="proglangs"}
-
-| Language | Typing          | Garbage Collected | Evaluation | Created |
-|----------|:---------------:|:-----------------:|------------|---------|
-| Haskell  | static, strong  | yes               | non-strict | 1990    |
-| Lua      | dynamic, strong | yes               | strict     | 1993    |
-| C        | static, weak    | no                | strict     | 1972    |
-
-## Equations
-
-Cross-references to equations work similar to those for floating
-elements. The difference is that, since captions are not supported
-for equations, the label must be included in the equation:
-
-    $$a^n + b^n = c^n \label{fermat}$$
-
-Referencing, however, is identical, with `\autoref{eq:fermat}`
-resulting in "\autoref{eq:fermat}".
-
-$$a^n + b^n = c^n \label{eq:fermat}$$
-
-Authors who do not wish to include the label directly in the formula can use a Markdown span to add the label:
-
-    [$$a^n + b^n = c^n$$]{label="eq:fermat"}
-
-
-Hi Benjamin, this equations is about the work we did today:
-
-$$ \rho(x) = 3$$
-
-Wow, also Joseph is here! I am showing you how we can discuss about fractional calculus in html!
-
-# Pandoc
-
-Readers may wonder about the reasons behind some of the choices made for
-paper writing. Most often, the decisions were driven by radical
-pragmatism. For example, Markdown is not only nearly ubiquitous in the
-realms of software, but it can also be converted into many different
-output formats. The archiving standard for scientific articles is JATS,
-and the most popular publishing format is PDF. Open Journals has built
-its pipeline based on [pandoc](https://pandoc.org), a universal document
-converter that can produce both of these publishing formats -- and many
-more.
-
-A common method for PDF generation is to go via LaTeX. However, support
-for tagging -- a requirement for accessible PDFs -- is not readily
-available for LaTeX. The current method used ConTeXt, to produce tagged
-PDF/A-3, a format suited for archiving [@pdfa3].
-
-# Codes
-
-```java
-public class Example implements LoremIpsum {
-	public static void main(String[] args) {
-		if(args.length < 2) {
-			System.out.println("Lorem ipsum dolor sit amet");
-		}
-	} // Obscura atque coniuge, per de coniunx
-}
-```
-
-\begin{equation}\label{eq:neighbor-propability}
-    p_{ij}(t) = \frac{\ell_j(t) - \ell_i(t)}{\sum_{k \in N_i(t)}^{} \ell_k(t) - \ell_i(t)}
-\end{equation}
-
-Test Nr. | Position | Radius | Rot | Grün | Blau | beste Fitness | Abweichung |
-|---|---|---|---|---|---|---|---|
-1 |  20 % |  20 % |  20 % |  20 % |  20 % |  7,5219 |  0,9115 |
-2 |   0 % |  25 % |  25 % |  25 % |  25 % |  8,0566 |  1,4462 |
-3 |   0 % |   0 % |  33 % |  33 % |  33 % |  8,7402 |  2,1298 |
-4 |  50 % |  20 % |  10 % |  10 % |  10 % |  6,6104 |  0,0000 |
-5 |  70 % |   0 % |  10 % |  10 % |  10 % |  7,0696 |  0,4592 |
-6 |  20 % |  50 % |  10 % |  10 % |  10 % |  7,0034 |  0,3930 |
-7 |  40 % |  15 % |  15 % |  15 % |  15 % |  6,9122 |  0,3018 |
-
-```python
-a = 3
-for i in range(6):
-  print(a)
-```
 
 # References
