@@ -4,6 +4,7 @@ import io
 import json
 import os
 import zipfile
+import shutil
 
 import flask
 import requests
@@ -112,6 +113,6 @@ def webhook():
         os.remove(latest_symlink)
 
     os.symlink(commit_id, LATEST_DIRECTORY_NAME, target_is_directory=True)
-    os.rename(LATEST_DIRECTORY_NAME, latest_symlink)
+    shutil.move(LATEST_DIRECTORY_NAME, latest_symlink)
 
     return "ok"
