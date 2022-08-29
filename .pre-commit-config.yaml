@@ -36,7 +36,7 @@ repos:
         language: system
   
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: ''
+    rev: 'v0.971'
     hooks:
       - id: mypy
         args: [--install-types, --non-interactive]
