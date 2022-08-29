@@ -1,49 +1,51 @@
 ---
-title: >-
-    A Decentralized Science framework for CrunchDAO
-authors:
-  - name: Matteo Manzi
-    email: matteo.manzi@crunchdao.com
-    affiliation: [1]
-    orcid: 0000-0002-5229-0746
-    corresponding: true
-affiliations:
-  - index: 1
-    name: CrunchDAO
-bibliography: paper.bib
-tags:
-  - reference
-  - example
-  - markdown
-  - publishing
+title: "A Decentralized Science framework for CrunchDAO"
+author: [Matteo Manzi]
+date: "2022-08-27"
+lang: "en"
+titlepage: true,
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "360049"
+titlepage-rule-height: 0
+titlepage-background: "./figures/background.pdf"
+
+header-left: "\\hspace{1cm}"
+header-right: "Page \\thepage"
+footer-left: "\\thetitle"
+footer-right: "\\theauthor"
 ---
 
 # Introduction 
 
-## Reference Projects
+## DeSci: an Overview
 
-- [DeSci Nodes](https://desci.com/nodes)
-- [Peer Review](https://github.com/danielBingham/peerreview)
-- [Ants-Review](https://arxiv.org/abs/2101.09378)
-- PRINCIPIA: a Decentralized Peer-Review Ecosystem: [paper](https://arxiv.org/pdf/2008.09011.pdf) and [article](https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here)
-- [DeSci World](https://desci.world/)
-- [IPLD](https://ipld.io/)
-- [Radicle](https://radicle.xyz/)
-- [openjournals-draft-action](https://github.com/openjournals/openjournals-draft-action)
-- [inara](https://github.com/openjournals/inara)
+In the setup of this framework, a number of existing projects have been used as references for guiding our design choices. While in our context
+this infrasctructure should enable us to collaborate, to avoid the so-called [tragedy of the anticommons](https://en.wikipedia.org/wiki/Tragedy_of_the_anticommons) and to always be reproducible, and this is a mean for us as a DAO to perform well
+in the financial market, the scope of this project is much broader and its potential in the public sector should not be neglected.
 
-## DeSci framework for decentralized paper writing
+The entry point for us has been [DeSci Labs](https://desci.com/), and their work on the development of DeSci Nodes, a new unit of knowledge going beyond PDF: "DeSci Nodes creates an inventory of research artifacts, an incentive system for replication, a mechanism for validation, and a connection point embedded into your preprint."
 
-In the process of setting this up, document design choices and use them to populate a first paper talking about 
-its underlying technology.
+Our design choices have also been driven by the lessons learned by Open Science, and Open-source Software Development: the ["Open Journals"](https://github.com/openjournals) organization, on which also the [Julia Ecosystem](https://juliacon.github.io/proceedings-guide/author/) is building on, is the most relevant here.
+
+One of the requirements here was to go beyond traditional peer review, using Web3 technologies. Reference projects, for this, have been Ants-Review [[@Antsreview]](https://arxiv.org/pdf/2101.09378.pdf), PRINCIPIA\footnote{See also \url{https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here}} [[@principia]](https://arxiv.org/pdf/2008.09011.pdf). Worth mentioning also the "Peer Review" repository\footnote{\url{https://github.com/danielBingham/peerreview}}.
+
+Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/), building on Git and Ethereum to "enable developers to collaborate on software over a peer-to-peer network", [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens.
+
+## A Decentralized Science framework 
+
+The first requirements has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
+
+The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility.
+
 
 - Integrate LaTeX/Markedown + Python.
-- Generate papers with github actions.
-- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
 
-- Integrate ResearchRabbit or something like it;
-- Integrate SciHub, libgen and others in the backend.
-- Integrate knowledge graphs, once out, from [Lateral](https://www.lateral.io/)
+
+The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
+
+Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer.
+
+- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
 
 ## The research paper(s) V1.0: Cover the CrunchDAO investment rationale
 
@@ -79,8 +81,7 @@ Filter these in the subsections below:
     - Median signal performance (Sharpe, ROI, DD)
     - Number of interaction with the podcasts.
     - Some way to evaluate the engagement of the syndacate.
-
-
+    
 
 ## NFTs
 
@@ -116,59 +117,6 @@ For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
         - MM DD - backtest
         - Competition OWEN and Spearman
 
-# Methodology
-
-This article describes the features of the Journal of Open Source
-Software [@smith2018] publishing pipeline. The publishing method
-is similar to the model described by @krewinkel2017, in that
-Markdown is used as the input format. The author-provided files
-serves as the source for all generated publishing artifacts.
-
-# Statement of Need
-
-The journal publisher, in most cases where you'd be reading this, Open
-Journals, maintains a detailed and helpful
-[article](https://joss.readthedocs.io/en/latest/submitting.html) on the
-requirements that articles must satisfy in order to be considered for
-publication in that journal. However, submission requirements do not
-help with the technical aspects of paper writing. The process for JOSS
-and similar journals is different, in that the paper should be written
-in the lightweight markup language *Markdown*.
-# Markdown primer
-
-Markdown is based on email conventions. It was developed by John Gruber
-and Aaron Swartz. This section provides a brief introduction to Markdown
-syntax. Certain details or alternatives will be omitted,
-
-If you are already familiar with Markdown, then you may want to skip
-this section and continue with the description of [article metadata].
-
-## Inline markup
-
-The markup in Markdown should be semantic, not presentations. The table
-below gives a small example.
-
-+---------------------+-------------------------+-----------------------+
-| Markup              | Markdown example        | Rendered output       |
-+:====================+:=======================:+:=====================:+
-| emphasis            | `*this*`                | *this*                |
-+---------------------+-------------------------+-----------------------+
-| strong emphasis     | `**that**`              | **that**              |
-+---------------------+-------------------------+-----------------------+
-| strikeout           | `~~not this~~`          | ~~not this~~          |
-+---------------------+-------------------------+-----------------------+
-| subscript           | `H~2~O`                 | H~2~O                 |
-+---------------------+-------------------------+-----------------------+
-| superscript         | `Ca^2+^`                | Ca^2+^                |
-+---------------------+-------------------------+-----------------------+
-| underline           | `[underline]{.ul}`      | [underline]{.ul}      |
-+---------------------+-------------------------+-----------------------+
-| small caps          | `[Small Caps]{.sc}`     | [Small Caps]{.sc}     |
-+---------------------+-------------------------+-----------------------+
-| inline code         | `` `return 23` ``       | `return 23`           |
-+---------------------+-------------------------+-----------------------+
-
-: Basic inline markup and examples.
 ### Images
 
 Markdown syntax for an image is that of a link, preceded by an
@@ -182,13 +130,6 @@ as a figure if
 2. it is the only element in a paragraph, i.e., it must be surrounded by
    blank lines.
 
-Images that are larger than the text area are scaled to fit the page. It
-can sometimes be useful to give images an explicit height and/or width,
-e.g. when adding an image as part of a paragraph. The Markdown `![Nyan
-cat](nyan-cat.png){height="9pt"}` includes the image "nyan-cat.png"
-![Nyan cat](nyan-cat.png){height="9pt"} while scaling it to a height of
-9 pt.
-
 ### Citations
 
 Bibliographic data should be collected in a file `paper.bib`; it
@@ -197,13 +138,14 @@ is acceptable as well. All major citation managers offer to export
 these formats.
 
 Cite a bibliography entry by referencing its identifier:
-`[@upper1974]` will create the reference "[@upper1974]". Omit the
+ will create the reference "[@upper1974]". Omit the
 brackets when referring to the author as part of a sentence: "For
 a case study on writers block, see @upper1974." Please refer to
 the [pandoc manual](https://pandoc.org/MANUAL#extension-citations)
 for additional features, including page locators, prefixes,
 suffixes, and suppression of author names in citations.
 ### Footnotes
+
 
 Syntax for footnotes centers around the "caret" character `^`. The
 symbol is also used as a delimiter for superscript text and thereby
@@ -254,6 +196,7 @@ example.
    energy, $\Delta U$, of a thermodynamic system is equal to the energy
    gained as heat, $Q$, less the thermodynamic work, $W$, done by the
    system on its surroundings. $$\Delta U = Q - W$$
+
 # Internal references
 
 Markdown has no default mechanism to handle document internal
@@ -263,12 +206,6 @@ writing experience. This includes convenient cross-reference generation,
 which is why a limited set of LaTeX commands are supported. In a
 nutshell, elements that were marked with `\label` and can be referenced
 with `\ref` and `\autoref`.
-
-[Open Journals]: https://theoj.org
-
-![View of coastal dunes in a nature reserve on Sylt, an island in the
-North Sea. Sylt (Danish: *Slid*) is Germany's northernmost
-island.](sylt.jpg){#sylt width="100%"}
 
 ## Tables and figures
 
@@ -334,5 +271,37 @@ A common method for PDF generation is to go via LaTeX. However, support
 for tagging -- a requirement for accessible PDFs -- is not readily
 available for LaTeX. The current method used ConTeXt, to produce tagged
 PDF/A-3, a format suited for archiving [@pdfa3].
+
+# Codes
+
+```java
+public class Example implements LoremIpsum {
+	public static void main(String[] args) {
+		if(args.length < 2) {
+			System.out.println("Lorem ipsum dolor sit amet");
+		}
+	} // Obscura atque coniuge, per de coniunx
+}
+```
+
+\begin{equation}\label{eq:neighbor-propability}
+    p_{ij}(t) = \frac{\ell_j(t) - \ell_i(t)}{\sum_{k \in N_i(t)}^{} \ell_k(t) - \ell_i(t)}
+\end{equation}
+
+Test Nr. | Position | Radius | Rot | Grün | Blau | beste Fitness | Abweichung |
+|---|---|---|---|---|---|---|---|
+1 |  20 % |  20 % |  20 % |  20 % |  20 % |  7,5219 |  0,9115 |
+2 |   0 % |  25 % |  25 % |  25 % |  25 % |  8,0566 |  1,4462 |
+3 |   0 % |   0 % |  33 % |  33 % |  33 % |  8,7402 |  2,1298 |
+4 |  50 % |  20 % |  10 % |  10 % |  10 % |  6,6104 |  0,0000 |
+5 |  70 % |   0 % |  10 % |  10 % |  10 % |  7,0696 |  0,4592 |
+6 |  20 % |  50 % |  10 % |  10 % |  10 % |  7,0034 |  0,3930 |
+7 |  40 % |  15 % |  15 % |  15 % |  15 % |  6,9122 |  0,3018 |
+
+```python
+a = 3
+for i in range(6):
+  print(a)
+```
 
 # References
