@@ -21,5 +21,4 @@ jobs:
       with:
         name: paper
         path: |
-          paper/paper.html
           paper/paper.pdf

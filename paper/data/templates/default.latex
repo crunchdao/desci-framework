@@ -877,6 +877,8 @@ $endif$
 %% end added
 %%
 
+\usepackage[final]{pdfpages}
+
 \begin{document}
 
 %%
@@ -1058,4 +1060,8 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+
+\includepdf[pages=-]{figures/back.pdf}
+
+
 \end{document}
