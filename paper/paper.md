@@ -17,59 +17,35 @@ footer-right: "\\theauthor"
 
 # Introduction 
 
-## Reference Projects
+## DeSci: an Overview
 
-- [DeSci Nodes](https://desci.com/nodes)
-- [Peer Review](https://github.com/danielBingham/peerreview)
-- [Ants-Review](https://arxiv.org/abs/2101.09378)
-- PRINCIPIA: a Decentralized Peer-Review Ecosystem: [paper](https://arxiv.org/pdf/2008.09011.pdf) and [article](https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here)
-- [DeSci World](https://desci.world/)
-- [IPLD](https://ipld.io/)
-- [Radicle](https://radicle.xyz/)
-- [openjournals-draft-action](https://github.com/openjournals/openjournals-draft-action)
-- [inara](https://github.com/openjournals/inara)
+In the setup of this framework, a number of existing projects have been used as references for guiding our design choices. While in our context
+this infrasctructure should enable us to collaborate, to avoid the so-called [tragedy of the anticommons](https://en.wikipedia.org/wiki/Tragedy_of_the_anticommons) and to always be reproducible, and this is a mean for us as a DAO to perform well
+in the financial market, the scope of this project is much broader and its potential in the public sector should not be neglected.
 
-```java
-public class Example implements LoremIpsum {
-	public static void main(String[] args) {
-		if(args.length < 2) {
-			System.out.println("Lorem ipsum dolor sit amet");
-		}
-	} // Obscura atque coniuge, per de coniunx
-}
-```
+The entry point for us has been [DeSci Labs](https://desci.com/), and their work on the development of DeSci Nodes, a new unit of knowledge going beyond PDF: "DeSci Nodes creates an inventory of research artifacts, an incentive system for replication, a mechanism for validation, and a connection point embedded into your preprint."
 
-\begin{equation}\label{eq:neighbor-propability}
-    p_{ij}(t) = \frac{\ell_j(t) - \ell_i(t)}{\sum_{k \in N_i(t)}^{} \ell_k(t) - \ell_i(t)}
-\end{equation}
+Our design choices have also been driven by the lessons learned by Open Science, and Open-source Software Development: the ["Open Journals"](https://github.com/openjournals) organization, on which also the [Julia Ecosystem](https://juliacon.github.io/proceedings-guide/author/) is building on, is the most relevant here.
 
-Test Nr. | Position | Radius | Rot | Grün | Blau | beste Fitness | Abweichung |
-|---|---|---|---|---|---|---|---|
-1 |  20 % |  20 % |  20 % |  20 % |  20 % |  7,5219 |  0,9115 |
-2 |   0 % |  25 % |  25 % |  25 % |  25 % |  8,0566 |  1,4462 |
-3 |   0 % |   0 % |  33 % |  33 % |  33 % |  8,7402 |  2,1298 |
-4 |  50 % |  20 % |  10 % |  10 % |  10 % |  6,6104 |  0,0000 |
-5 |  70 % |   0 % |  10 % |  10 % |  10 % |  7,0696 |  0,4592 |
-6 |  20 % |  50 % |  10 % |  10 % |  10 % |  7,0034 |  0,3930 |
-7 |  40 % |  15 % |  15 % |  15 % |  15 % |  6,9122 |  0,3018 |
+One of the requirements here was to go beyond traditional peer review, using Web3 technologies. Reference projects, for this, have been Ants-Review [[@Antsreview]](https://arxiv.org/pdf/2101.09378.pdf), PRINCIPIA\footnote{See also \url{https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here}} [[@principia]](https://arxiv.org/pdf/2008.09011.pdf). Worth mentioning also the "Peer Review" repository\footnote{\url{https://github.com/danielBingham/peerreview}}.
 
-```python
-a = 3
-for i in range(6):
-  print(a)
-```
-## DeSci framework for decentralized paper writing
+Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/), building on Git and Ethereum to "enable developers to collaborate on software over a peer-to-peer network", [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens.
 
-In the process of setting this up, document design choices and use them to populate a first paper talking about 
-its underlying technology.
+## A Decentralized Science framework 
+
+The first requirements has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
+
+The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility.
+
 
 - Integrate LaTeX/Markedown + Python.
-- Generate papers with github actions.
-- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
 
-- Integrate ResearchRabbit or something like it;
-- Integrate SciHub, libgen and others in the backend.
-- Integrate knowledge graphs, once out, from [Lateral](https://www.lateral.io/)
+
+The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
+
+Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer.
+
+- Render paper in CrunchDAO website and build UX for easy reviews/comments/pull requests.
 
 ## The research paper(s) V1.0: Cover the CrunchDAO investment rationale
 
@@ -140,42 +116,7 @@ For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
         - MM ROI - backtest
         - MM DD - backtest
         - Competition OWEN and Spearman
-        
-# Markdown primer
 
-Markdown is based on email conventions. It was developed by John Gruber
-and Aaron Swartz. This section provides a brief introduction to Markdown
-syntax. Certain details or alternatives will be omitted,
-
-If you are already familiar with Markdown, then you may want to skip
-this section and continue with the description of [article metadata].
-
-## Inline markup
-
-The markup in Markdown should be semantic, not presentations. The table
-below gives a small example.
-
-+---------------------+-------------------------+-----------------------+
-| Markup              | Markdown example        | Rendered output       |
-+:====================+:=======================:+:=====================:+
-| emphasis            | `*this*`                | *this*                |
-+---------------------+-------------------------+-----------------------+
-| strong emphasis     | `**that**`              | **that**              |
-+---------------------+-------------------------+-----------------------+
-| strikeout           | `~~not this~~`          | ~~not this~~          |
-+---------------------+-------------------------+-----------------------+
-| subscript           | `H~2~O`                 | H~2~O                 |
-+---------------------+-------------------------+-----------------------+
-| superscript         | `Ca^2+^`                | Ca^2+^                |
-+---------------------+-------------------------+-----------------------+
-| underline           | `[underline]{.ul}`      | [underline]{.ul}      |
-+---------------------+-------------------------+-----------------------+
-| small caps          | `[Small Caps]{.sc}`     | [Small Caps]{.sc}     |
-+---------------------+-------------------------+-----------------------+
-| inline code         | `` `return 23` ``       | `return 23`           |
-+---------------------+-------------------------+-----------------------+
-
-: Basic inline markup and examples.
 ### Images
 
 Markdown syntax for an image is that of a link, preceded by an
@@ -255,6 +196,7 @@ example.
    energy, $\Delta U$, of a thermodynamic system is equal to the energy
    gained as heat, $Q$, less the thermodynamic work, $W$, done by the
    system on its surroundings. $$\Delta U = Q - W$$
+
 # Internal references
 
 Markdown has no default mechanism to handle document internal
@@ -329,5 +271,37 @@ A common method for PDF generation is to go via LaTeX. However, support
 for tagging -- a requirement for accessible PDFs -- is not readily
 available for LaTeX. The current method used ConTeXt, to produce tagged
 PDF/A-3, a format suited for archiving [@pdfa3].
+
+# Codes
+
+```java
+public class Example implements LoremIpsum {
+	public static void main(String[] args) {
+		if(args.length < 2) {
+			System.out.println("Lorem ipsum dolor sit amet");
+		}
+	} // Obscura atque coniuge, per de coniunx
+}
+```
+
+\begin{equation}\label{eq:neighbor-propability}
+    p_{ij}(t) = \frac{\ell_j(t) - \ell_i(t)}{\sum_{k \in N_i(t)}^{} \ell_k(t) - \ell_i(t)}
+\end{equation}
+
+Test Nr. | Position | Radius | Rot | Grün | Blau | beste Fitness | Abweichung |
+|---|---|---|---|---|---|---|---|
+1 |  20 % |  20 % |  20 % |  20 % |  20 % |  7,5219 |  0,9115 |
+2 |   0 % |  25 % |  25 % |  25 % |  25 % |  8,0566 |  1,4462 |
+3 |   0 % |   0 % |  33 % |  33 % |  33 % |  8,7402 |  2,1298 |
+4 |  50 % |  20 % |  10 % |  10 % |  10 % |  6,6104 |  0,0000 |
+5 |  70 % |   0 % |  10 % |  10 % |  10 % |  7,0696 |  0,4592 |
+6 |  20 % |  50 % |  10 % |  10 % |  10 % |  7,0034 |  0,3930 |
+7 |  40 % |  15 % |  15 % |  15 % |  15 % |  6,9122 |  0,3018 |
+
+```python
+a = 3
+for i in range(6):
+  print(a)
+```
 
 # References
