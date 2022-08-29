@@ -1,5 +1,5 @@
 ---
-title: "A Decentralized Science framework by CrunchDAO"
+title: ""
 author: [Matteo Manzi]
 date: "2022-08-27"
 lang: "en"
@@ -11,7 +11,7 @@ titlepage-background: "./figures/background.pdf"
 
 header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
-footer-left: "\\thetitle"
+footer-left: "A Decentralized Science framework for CrunchDAO"
 footer-right: "\\theauthor"
 ---
 
