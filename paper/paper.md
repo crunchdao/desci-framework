@@ -1,5 +1,5 @@
 ---
-title: "A Decentralized Science framework for CrunchDAO"
+title: "A Decentralized Science framework by CrunchDAO"
 author: [Matteo Manzi]
 date: "2022-08-27"
 lang: "en"
@@ -15,7 +15,7 @@ footer-left: "\\thetitle"
 footer-right: "\\theauthor"
 ---
 
-# Introduction 
+# A Decentralized Science framework 
 
 ## DeSci: an Overview
 
@@ -31,15 +31,11 @@ One of the requirements here was to go beyond traditional peer review, using Web
 
 Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/), building on Git and Ethereum to "enable developers to collaborate on software over a peer-to-peer network", [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens.
 
-## A Decentralized Science framework 
+## Design Choices
 
 The first requirements has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
 
-The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility.
-
-
-- Integrate LaTeX/Markedown + Python.
-
+The paper backend lives in a repository\footnote{https://github.com/crunchdao/desci} also containing a Python package: in this way the  symbiosys between codes and plain language can be leveraged to foster reproducibility. For example, there is a command called ?????? which can be used to produce this Figure:
 
 The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
 
@@ -51,7 +47,7 @@ Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.co
 
 - Start from website+documentation, 2 medium articles, CrunchDAO website. 
 - Study NumerAI and RocketCapital and understand differences, Judge Research.
-- Record long technical deep talk with Jean to understand everything.
+
 
 - Layer 1 vs Layer 2 in CrunchDAO
 
@@ -94,8 +90,6 @@ Then we vote with tokens to decide whether the pull request on the paper is acce
 What is the role of SBTs here? Decentralized Society: Finding Web3’s Soul.
 
 The outcome of the peer review changes your grade in the DAO which changes your access to the APY, Alternative idea, you stake on the pull request and if it is bad you lose.
-
-For all this, we need IPFS + git. See [here](https://radicle.xyz/), maybe.
 
 ## Social Presence (Talk with Ben for this)
 
