@@ -3,8 +3,8 @@ import hmac
 import io
 import json
 import os
-import zipfile
 import shutil
+import zipfile
 
 import flask
 import requests
