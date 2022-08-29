@@ -1,7 +1,7 @@
 ---
 title: ""
-author: [Matteo Manzi]
-date: "2022-08-27"
+author: []
+date: ""
 lang: "en"
 titlepage: true,
 titlepage-text-color: "FFFFFF"
@@ -12,7 +12,7 @@ titlepage-background: "./figures/background.pdf"
 header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
 footer-left: "A Decentralized Science framework for CrunchDAO"
-footer-right: "\\theauthor"
+footer-right: "Matteo Manzi"
 ---
 
 # A Decentralized Science framework 
