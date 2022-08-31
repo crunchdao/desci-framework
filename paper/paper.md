@@ -33,8 +33,7 @@ footer-right: "Matteo Manzi"
 "Decentralized Science (DeSci), which recently came into play, refers to the communities of scientists, builders, advocates, and organizers that create infrastructure and advocate for distributed coordination to support scientific progress. It can advance the conditions of scientists worldwide and creates systems for scientists to recapture the value they create. Even in science, the success of a decentralised ecosystem depends on the community incentives structure and the microeconomy created around these incentives"\footnote{\url{https://desci.com/roadmap}}.
 
 In the setup of this framework, a number of existing projects have been used as references for guiding our design choices. While in our context
-this infrasctructure should enable us to collaborate, to avoid the so-called [tragedy of the anticommons](https://en.wikipedia.org/wiki/Tragedy_of_the_anticommons) and to always be reproducible, and this is a mean for us as a DAO to perform well
-in the financial market, the scope of this project is much broader and its potential in the public sector should not be neglected. Worth mentioning, for example, [the General Index](https://archive.org/details/GeneralIndex), and [Impact Certificates](https://impactmarkets.io/).
+this infrasctructure should enable us to collaborate, to avoid the so-called [tragedy of the anticommons](https://en.wikipedia.org/wiki/Tragedy_of_the_anticommons) and to always be reproducible, and this is a mean for us as a DAO to perform well in the financial market, the scope of this project is much broader and its potential in the public sector should not be neglected. Worth mentioning, for example, [the General Index](https://archive.org/details/GeneralIndex), and [Impact Certificates](https://impactmarkets.io/). -->
 
 The entry point for us has been [DeSci Labs](https://desci.com/), and their work on the development of DeSci Nodes, a new unit of knowledge going beyond PDF: "DeSci Nodes creates an inventory of research artifacts, an incentive system for replication, a mechanism for validation, and a connection point embedded into your preprint."
 
@@ -70,20 +69,18 @@ The paper backend lives in a repository\footnote{https://github.com/crunchdao/de
 
 The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
 
-In fact, currently, scientists must be trusted to provide a true and useful representation of their research results in their final publication; blockchain would make much larger parts of the research cycle open to scientific self-correction. This bears the potential to be a technical solution to the current reproducibility crisis in science, and could reduce waste and make more research results true [@Bartling2019].
+In fact, currently, scientists must be trusted to provide a true and useful representation of their research results in their final publication; blockchain would make much larger parts of the research cycle open to scientific self-correction. This bears the potential to be a technical solution to the current reproducibility crisis in science, and could reduce waste and make more research results true 
+[@Bartling2019].
 
 Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer. If you nevertheless prefer to work on your editor, you can work on a new branch and then open a pull request at the public repository \url{https://github.com/crunchdao/desci}.
 
-It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch\footnote{See, for example, here: \url{https://github.com/crunchdao/desci/runs/8112741832?check_suite_focus=true#step:5:240}}. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self describing metadata. As the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
+It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self describing metadata. As the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
 Finally, removing the need to write papers using PDFs, it is possible to integrate multimedia contents in the, fostering outreach and education.
 
-An example is given here, given that you are not reading this in PDF:
-
-
-<video width="320" height="240" controls>
-  <source src="./figures/0014.mp4" type="video/mp4">
-</video>
+![*If you are reading this, you are missing some nice animations about chaos theory and stochastic modeling. The good news is, we already have a first html version of this paper on IPFS.*](figures/0028.gif)
+![](figures/0029.gif)
+![](figures/0035.gif)
 
 In the context of CrunchDAO, the incentive structure is implicit in the fact that, challeging problematic assumptions in the hedge fund model, its performance increases, leading to the an increase in the value of the DAO (See [next Section](#crunchdao)). This integration of the hedge fund and the DAO is crucial to mitigate major flows of other Crowdsourced Investment frameworks [[@openscience]](https://doi.org/10.1177/0306312718772086)\footnote{Also tackling issues associated with the current public funding of science [[@Buterin_2019]](https://arxiv.org/abs/1809.06421)}. As an example, the introduction of the True Contribution at Numerai\footnote{\url{https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac
 }} has the risk of detaching the hedge fund and the community members, i.e. the tournament players (more on this in Subsection ["Metamodeling Layer 1"](#mml1)).
