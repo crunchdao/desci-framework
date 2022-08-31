@@ -13,3 +13,6 @@ run-linux: image
 
 rm:
 	docker rm -f $(CONTAINER)
+
+logs:
+	docker logs -f $(CONTAINER)
