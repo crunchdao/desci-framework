@@ -16,15 +16,15 @@ jobs:
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --bibliography ./paper.bib -o paper.pdf
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --resource-path=./figures/ --bibliography ./paper.bib -o paper.html
-        
+        mv paper.pdf ./figures/paper.pdf
+        mv paper.html ./figures/paper.html
+
     - name: Save Artifact
       uses: actions/upload-artifact@v3
       with:
         name: paper
         path: |
-          paper/paper.pdf
-          paper/paper.html
-
+          paper/figures/
     
     - name: Upload PDF to IPFS
       uses: aquiladev/ipfs-action@master
