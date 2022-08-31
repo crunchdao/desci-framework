@@ -3,9 +3,9 @@ import hmac
 import io
 import json
 import os
+import re
 import shutil
 import zipfile
-import re
 
 import flask
 import requests
@@ -21,9 +21,7 @@ PAPER_PDF_FILE = "paper.pdf"
 INFO_JSON_FILE = "info.json"
 
 session = requests.Session()
-session.headers.update({
-    "Authorization": f"Token {os.environ['GITHUB_TOKEN']}"
-})
+session.headers.update({"Authorization": f"Token {os.environ['GITHUB_TOKEN']}"})
 
 
 def load_zip(url: str) -> zipfile.ZipFile:
@@ -95,8 +93,7 @@ def webhook():
         artifacts_url = workflow["artifacts_url"]
         artifacts = session.get(artifacts_url).json()["artifacts"]
 
-        artefact = next(
-            filter(lambda x: x["name"] == ARTEFACT_NAME, artifacts), None)
+        artefact = next(filter(lambda x: x["name"] == ARTEFACT_NAME, artifacts), None)
         if artefact is None:
             return f"{ARTEFACT_NAME} artifact not found"
 
@@ -107,7 +104,7 @@ def webhook():
             return f"{PAPER_PDF_FILE} not in the zip"
 
         paper = zip.read(PAPER_PDF_FILE)
-    
+
     if True:
         logs_url = workflow["logs_url"]
         zip = load_zip(logs_url)
@@ -115,9 +112,9 @@ def webhook():
         build_txt = "1_build.txt"
         if build_txt not in zip.namelist():
             return f"{build_txt} not in the zip"
-        
+
         logs = zip.read(build_txt).decode("utf-8")
-    
+
     if True:
         regex = r"ipfs: '(.+?)'"
         matches = re.finditer(regex, logs)
@@ -133,7 +130,7 @@ def webhook():
 
     with open(f"{commit_directory}/{PAPER_PDF_FILE}", "wb") as fd:
         fd.write(paper)
-    
+
     with open(f"{commit_directory}/{INFO_JSON_FILE}", "w") as fd:
         json.dump(commit, fd, indent=4)
 
