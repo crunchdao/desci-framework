@@ -28,7 +28,7 @@ jobs:
     - name: Upload to IPFS
       uses: aquiladev/ipfs-action@master
       with:
-        path: /tmp/paper/_  # `_` is for faking a "file"
+        path: /tmp/paper
         verbose: true
         pin: true
         pinName: crunchdao_desci_paper_${{ github.sha }}
