@@ -15,6 +15,8 @@ jobs:
       run: |
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib -o paper.pdf
+        docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/  --resource-path=./figures/ --bibliography ./paper.bib -o paper.html
+
 
     - name: Save Artifact
       uses: actions/upload-artifact@v3
@@ -22,6 +24,8 @@ jobs:
         name: paper
         path: |
           paper/paper.pdf
+          paper/paper.html
+
     
     - name: Upload to IPFS
       uses: aquiladev/ipfs-action@master
@@ -29,7 +33,19 @@ jobs:
         path: paper/paper.pdf
         verbose: true
         pin: true
-        pinName: crunchdao_desci_paper_${{ github.sha }}
+        pinName: crunchdao_desci_paper__pdf_${{ github.sha }}
+        service: filebase
+        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
+        filebaseKey: ${{ secrets.FILEBASE_KEY }}
+        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
+
+    - name: Upload to IPFS
+      uses: aquiladev/ipfs-action@master
+      with:
+        path: paper/paper.html
+        verbose: true
+        pin: true
+        pinName: crunchdao_desci_paper_html_${{ github.sha }}
         service: filebase
         filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
         filebaseKey: ${{ secrets.FILEBASE_KEY }}
