@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import zipfile
+import re
 
 import flask
 import requests
@@ -18,6 +19,15 @@ ARTEFACT_NAME = "paper"
 
 PAPER_PDF_FILE = "paper.pdf"
 INFO_JSON_FILE = "info.json"
+
+session = requests.Session()
+session.headers.update({
+    "Authorization": f"Token {os.environ['GITHUB_TOKEN']}"
+})
+
+
+def load_zip(url: str) -> zipfile.ZipFile:
+    return zipfile.ZipFile(io.BytesIO(session.get(url).content))
 
 
 def get_commit_directory(commit_id: str) -> str:
@@ -81,30 +91,49 @@ def webhook():
     commit = workflow["head_commit"]
     commit_id = commit["id"]
 
-    artifacts_url = workflow["artifacts_url"]
-    artifacts = requests.get(artifacts_url).json()["artifacts"]
+    if True:
+        artifacts_url = workflow["artifacts_url"]
+        artifacts = session.get(artifacts_url).json()["artifacts"]
 
-    artefact = next(filter(lambda x: x["name"] == ARTEFACT_NAME, artifacts), None)
-    if artefact is None:
-        return f"{ARTEFACT_NAME} artifact not found"
+        artefact = next(
+            filter(lambda x: x["name"] == ARTEFACT_NAME, artifacts), None)
+        if artefact is None:
+            return f"{ARTEFACT_NAME} artifact not found"
 
-    archive_download_url = artefact["archive_download_url"]
-    zip = zipfile.ZipFile(
-        io.BytesIO(
-            requests.get(
-                archive_download_url,
-                headers={"Authorization": f"Token {os.environ['GITHUB_TOKEN']}"},
-            ).content
-        )
-    )
+        archive_download_url = artefact["archive_download_url"]
+        zip = load_zip(archive_download_url)
 
-    if PAPER_PDF_FILE not in zip.namelist():
-        return f"{PAPER_PDF_FILE} not in the zip"
+        if PAPER_PDF_FILE not in zip.namelist():
+            return f"{PAPER_PDF_FILE} not in the zip"
+
+        paper = zip.read(PAPER_PDF_FILE)
+    
+    if True:
+        logs_url = workflow["logs_url"]
+        zip = load_zip(logs_url)
+
+        build_txt = "1_build.txt"
+        if build_txt not in zip.namelist():
+            return f"{build_txt} not in the zip"
+        
+        logs = zip.read(build_txt).decode("utf-8")
+    
+    if True:
+        regex = r"ipfs: '(.+?)'"
+        matches = re.finditer(regex, logs)
+
+        for match in matches:
+            commit["ipfs"] = match.group(1)
+            break
+        else:
+            return "no ipfs link found"
 
     commit_directory = get_commit_directory(commit_id)
     os.makedirs(commit_directory, exist_ok=True)
 
-    zip.extract(PAPER_PDF_FILE, commit_directory)
+    with open(f"{commit_directory}/{PAPER_PDF_FILE}", "wb") as fd:
+        fd.write(paper)
+    
     with open(f"{commit_directory}/{INFO_JSON_FILE}", "w") as fd:
         json.dump(commit, fd, indent=4)
 
