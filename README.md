@@ -102,7 +102,7 @@ Install requirements:
 make install
 ```
 
-Pre-commit hooks coulb be installed after `git init` via
+Pre-commit hooks could be installed after `git init` via
 
 ```bash
 make pre-commit-install

@@ -26,7 +26,7 @@ footer-right: "Matteo Manzi"
 
 \newpage
 
-# A Decentralized Science framework 
+# A Decentralized Science (DeSci) Framework 
 
 ## DeSci: an Overview
 
@@ -69,20 +69,13 @@ The paper backend lives in a repository\footnote{https://github.com/crunchdao/de
 
 The paper is generated, using a docker image\footnote{https://hub.docker.com/r/crunchdao/desci-pandoc}, by the Actions of our repository: in this way the principles of Continuous Integration/Continuous Development not only apply to software, but also to the overlying scientific unit of knowledge.
 
-In fact, currently, scientists must be trusted to provide a true and useful representation of their research results in their final publication; blockchain would make much larger parts of the research cycle open to scientific self-correction. This bears the potential to be a technical solution to the current reproducibility crisis in science, and could reduce waste and make more research results true 
-[@Bartling2019].
+In fact, currently, scientists must be trusted to provide a true and useful representation of their research results in their final publication; blockchain would make much larger parts of the research cycle open to scientific self-correction. This bears the potential to be a technical solution to the current reproducibility crisis in science, and could reduce waste and make more research results true [@Bartling2019].
 
-Finally, an intiutive User Interface is setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge don't have to be skilled software developer. If you nevertheless prefer to work on your editor, you can work on a new branch and then open a pull request at the public repository \url{https://github.com/crunchdao/desci}.
+Finally, an intiutive User Interface will be setup at \url{https://desci.crunchdao.com/}: contributors of these units of knowledge won't have to be skilled software developer. If you nevertheless prefer to work on your editor, you can work on a new branch and then open a pull request at the public repository \url{https://github.com/crunchdao/desci}.
 
-It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self describing metadata. As the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
+It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
-Finally, removing the need to write papers using PDFs, it is possible to integrate multimedia contents in the, fostering outreach and education.
-
-*If you are reading this from the PDF, you are missing some nice animations about chaos theory and stochastic modeling! The good news is, we already have the html version of this paper on IPFS. If you are not on the PDF version, enjoy:*
-
-![](figures/0028.gif)
-![](figures/0029.gif)
-![](figures/0035.gif)
+Finally, removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education. If you are reading this from the PDF, you are missing some nice animations about chaos theory and stochastic modeling. The good news is, we already have a premliminary html version of this paper [here](https://htmlpreview.github.io/?https://github.com/crunchdao/desci/blob/main/paper/paper.html): enjoy!.
 
 In the context of CrunchDAO, the incentive structure is implicit in the fact that, challeging problematic assumptions in the hedge fund model, its performance increases, leading to the an increase in the value of the DAO (See [next Section](#crunchdao)). This integration of the hedge fund and the DAO is crucial to mitigate major flows of other Crowdsourced Investment frameworks [[@openscience]](https://doi.org/10.1177/0306312718772086)\footnote{Also tackling issues associated with the current public funding of science [[@Buterin_2019]](https://arxiv.org/abs/1809.06421)}. As an example, the introduction of the True Contribution at Numerai\footnote{\url{https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac
 }} has the risk of detaching the hedge fund and the community members, i.e. the tournament players (more on this in Subsection ["Metamodeling Layer 1"](#mml1)).
@@ -91,7 +84,7 @@ In the context of CrunchDAO, the incentive structure is implicit in the fact tha
 
 # CrunchDAO {#crunchdao}
 
-CrunchDAO is a market-neutral hedge-fund powered by a Decentralized Autonomous Organization of data scientists. The vision, to make use of collective intelligence to solve complex problems, is powered by a solid tokeconomics which enables the DAO to do well when the hedge fund does well (Figure \ref{fig:vc}).
+CrunchDAO is a Decentralized Autonomous Organization of scientists making use of collective intelligence to solve complex problems, powered by a solid tokeconomics (Figure \ref{fig:vc}).
 
 ![A portion of the fund’s performance is used to buyback $CRUNCH tokens, and use them as rewards for the next tournaments, leading to a virtuous cycle between the fund and the DAO.\label{fig:vc}](figures/virtuouscycle.png)
 
