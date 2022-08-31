@@ -30,6 +30,7 @@ jobs:
         verbose: true
         pin: true
         pinName: crunchdao_desci_paper_${{ github.sha }}
-        service: infura
-        infuraProjectId: ${{ secrets.INFURA_PROJECT_ID }}
-        infuraProjectSecret: ${{ secrets.INFURA_PROJECT_SECRET }}
+        service: filebase
+        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
+        filebaseKey: ${{ secrets.FILEBASE_KEY }}
+        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
