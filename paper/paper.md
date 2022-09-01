@@ -76,13 +76,13 @@ Finally, an intuitive User Interface will be set up at [desci.crunchdao.com](htt
 It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self-describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
 Finally, by removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education. If you are reading this from the PDF, you are missing some nice animations about chaos theory and stochastic modeling. The good news is, we already have a preliminary HTML version of this paper [here](https://htmlpreview.github.io/?https://github.com/crunchdao/desci/blob/main/paper/paper.html): enjoy!
-<!-- docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --resource-path=./figures/ --bibliography ./paper.bib -o paper.html -->
+<!--sudo docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --resource-path=./figures/ --bibliography ./paper.bib -o paper.html -->
 
 ![](figures/0028.gif)
 ![](figures/0029.gif)
 ![](figures/0035.gif)
 
-In the context of CrunchDAO, the incentive structure is implicit in the fact that, challenging problematic assumptions in the hedge fund model, its performance increases, leading to an increase in the value of the DAO (See [next Section](#crunchdao)). This integration of the hedge fund and the DAO is crucial to mitigate major flows of other Crowdsourced Investment frameworks [[@openscience]](https://doi.org/10.1177/0306312718772086), also tackling issues associated with the current public funding of science [[@Buterin_2019]](https://arxiv.org/abs/1809.06421). As an example, the introduction of the [True Contribution at Numerai](https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac) has the risk of detaching the hedge fund and the community members, i.e. the tournament players, which are in this way incentivised to converge to the Nash equilibrium of an imperfect information game, whose rules change as a function of the behaviour of the other tournament players (more on this in Subsection ["Metamodeling Layer 1"](#mml1)).
+In the context of CrunchDAO, the incentive structure is implicit in the fact that, challenging problematic assumptions in the metamodeling and portfolio optimization, i.e., all the steps between the tournament and the production of a signal, increases its performance, leading to an increase in the value of the DAO in the market (See [next Section](#crunchdao)). This integration is crucial to mitigate major flows of other Crowdsourced Investment frameworks [[@openscience]](https://doi.org/10.1177/0306312718772086), also tackling issues associated with the current public funding of science [[@Buterin_2019]](https://arxiv.org/abs/1809.06421). As an example, the introduction of the [True Contribution at Numerai](https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac) has the risk of leading to an ill-defined the tournament, as its players are in this way incentivised to converge to the Nash equilibrium of an imperfect information game, whose rules change as a function of the behaviour of the other tournament players (more on this in Subsection ["Metamodeling Layer 1"](#mml1)).
 
 \newpage
 
@@ -106,16 +106,7 @@ CrunchDAO is a Decentralized Autonomous Organization of scientists making use of
 
 ## Metamodeling Layer 1 {#mml1}
 
-There is a need to align the incentives of the DAO members with the hedge fund. Tournament players cannot build their model on some data aiming at maximizing 
-a correlation score when the hedge fund pays based on a different metric: if we want to treat tournament players fairly, we have to give them access to the metamodel, so that they can adjust their goal to the maximization of the True Contribution. We are assuming that metric is the best objective, at the tournament level, that maximizes the long-term performance of the hedge fund. 
-
-
-<!-- - There should be reinforcement learning frameworks that are agnostic wrt this low-level objective, which is evolving with the model in the maximization of a score. This is much better. -->
-
-<!-- - Understanding and documenting Udit and Emanuele. -->
-
-<!-- -  [Idiosyncratic Risk](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp); -->
-<!-- -  [Sharpe Ratio](https://www.investopedia.com/terms/s/sharperatio.asp); -->
+There is a need to align the incentives of the single tournament players with the DAO as a whole. Tournament players cannot build their model on some data aiming at maximizing a correlation score when the DAO pays based on a different metric: if we want to treat tournament players fairly, we have to give them access to the metamodel, so that they can adjust their goal to the maximization of the True Contribution. We are assuming that such metric is the best objective, at the tournament level, that maximizes the long-term performance of the signal produced by the DAO. Moreover, there is alredy a problematic assumption in splitting this optimization problem into a sequence of two optimization problems. More research is necessary.
 
 ## Metamodeling Layer 2
 
@@ -137,45 +128,5 @@ CrunchDAO makes use of different datasets.
 - [Convex Optimization](https://en.wikipedia.org/wiki/Concavification), but keep also in mind [Convexification](http://larsblackmore.com/publications.htm) done in space: I would expect here to have something similar, if not more non-convex.
 
 - Targets defined by [Barra Risk Factor Analysis](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp);
-
-<!-- # Messy notes
-
-In the DeSci section, discuss this: https://scholarlykitchen.sspnet.org/2022/08/29/a-new-ostp-memo-some-initial-observations-and-questions/
-
-Filter these in the subsections below:
-
-- Kind of council of elders of top crunchers: identify and engage top scientific profiles from the community 
-- Allow elders to interact with the research paper in a DeSci way 
-- Orchestrate the call for signal and Cherry peek the best signals 
-
-- Work on the definition of KPIs. Some ideas: 
-    - Number of interactions on the paper
-    - Median signal performance (Sharpe, ROI, DD)
-    - Number of interactions with the podcasts.
-    - Some way to evaluate the engagement of the syndicate.
-
-Strategy KPI?
-
-- KPIs
-    - MM Sharpe
-    - Backtest
-        - MM ROI - backtest
-        - MM DD - backtest
-        - Competition OWEN and Spearman
-
-In the beginning, we could gift an NFT? to people we want as advisors, and having one leads to being able to give feedback on the paper. See [here](https://desci.world/). This will allow people to join the 
-
-- [ ] Mathematical syndicate 
-- [ ] Seldonian Council (after Hari Seldon, Asimov, the developer of psychohistory) 
-- [ ] Seldonian Foundation
-- [ ] The Psychohistorians.
-
-Then we vote with tokens to decide whether the pull request on the paper is accepted or not. Voting on the papers shall become part of civil duties. How will individual decisions be integrated into the final one? More token more power, one head one vote? Or something fancy like ["A Flexible Design for Funding Public Goods"](https://arxiv.org/abs/1809.06421). Or something like [this](https://www.bretthennig.com/reinvigorating_democracy_through_random_selection)?
-
-What is the role of SBTs here? Decentralized Society: Finding Web3’s Soul.
-
-The outcome of the peer review changes your grade in the DAO which changes your access to the APY, Alternative idea, you stake on the pull request and if it is bad you lose.
-
-- Implement in Python the pipeline that we use in the backend for the computation of the performance and the population -->
 
 # References
