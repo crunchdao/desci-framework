@@ -15,7 +15,7 @@ jobs:
       run: |
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --bibliography ./paper.bib -o paper.pdf
-
+        
 
     - name: Save Artifact
       uses: actions/upload-artifact@v3
