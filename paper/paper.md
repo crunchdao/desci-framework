@@ -78,9 +78,9 @@ It is therefore possible to make use of IPFS to create an immutable copy of each
 Finally, by removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education. If you are reading this from the PDF, you are missing some nice animations about chaos theory and stochastic modeling. The good news is, we already have a preliminary HTML version of this paper [here](https://htmlpreview.github.io/?https://github.com/crunchdao/desci/blob/main/paper/paper.html): enjoy!
 <!--sudo docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --resource-path=./figures/ --bibliography ./paper.bib -o paper.html -->
 
-![](figures/0028.gif)
+<!-- ![](figures/0028.gif)
 ![](figures/0029.gif)
-![](figures/0035.gif)
+![](figures/0035.gif) -->
 
 In the context of CrunchDAO, the incentive structure is implicit in the fact that, challenging problematic assumptions in the metamodeling and portfolio optimization, i.e., all the steps between the tournament and the production of a signal, increases its performance, leading to an increase in the value of the DAO in the market (See [next Section](#crunchdao)). This integration is crucial to mitigate major flows of other Crowdsourced Investment frameworks [[@openscience]](https://doi.org/10.1177/0306312718772086), also tackling issues associated with the current public funding of science [[@Buterin_2019]](https://arxiv.org/abs/1809.06421). As an example, the introduction of the [True Contribution at Numerai](https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac) has the risk of leading to an ill-defined the tournament, as its players are in this way incentivised to converge to the Nash equilibrium of an imperfect information game, whose rules change as a function of the behaviour of the other tournament players (more on this in Subsection ["Metamodeling Layer 1"](#mml1)).
 
