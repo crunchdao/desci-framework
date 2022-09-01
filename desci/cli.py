@@ -14,6 +14,7 @@ def cli():
 def helloworld():
     """Hello World."""
     print("Hello World!")
+    print("This line was produced during the video presentation.")
 
 
 @cli.command(name="helloplot")

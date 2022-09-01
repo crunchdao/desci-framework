@@ -21,7 +21,7 @@ footer-right: "Matteo Manzi"
 |----------|:---------------:|:-----------------:|------------|
 | Matteo Manzi | matteoettam09 | matteoettam09#9362 | 2022/08/27 |
 |Enzo Caceres | Caceresenzo | Enzo Caceres#4224 | 2022/08/28 |
-|||||
+|Someone | Someting | SOmething else | Today|
 |||||
 |||||
 
