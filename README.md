@@ -21,10 +21,10 @@
 
 ### Development features
 
-- Supports for `Python 3.9` and higher.
+- Supports `Python 3.9` and higher.
 - [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/crunchdao/desci/blob/main/pyproject.toml) and [`setup.cfg`](https://github.com/crunchdao/desci/blob/main/setup.cfg).
-- Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
-- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
+- Automatic code style with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort), and [`pyupgrade`](https://github.com/asottile/pyupgrade).
+- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code formatting.
 - Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
 - Ready-to-use [`.editorconfig`](https://github.com/crunchdao/desci/blob/main/.editorconfig), [`.dockerignore`](https://github.com/crunchdao/desci/blob/main/.dockerignore), and [`.gitignore`](https://github.com/crunchdao/desci/blob/main/.gitignore). You don't have to worry about those things.
@@ -33,7 +33,7 @@
 
 - `GitHub` integration: issue and pr templates.
 - `Github Actions` with predefined [build workflow](https://github.com/crunchdao/desci/blob/main/.github/workflows/build.yml) as the default CI/CD.
-- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/crunchdao/desci/blob/main/Makefile#L89). More details in [makefile-usage](#makefile-usage).
+- Everything is already set up for security checks, code style checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/crunchdao/desci/blob/main/Makefile#L89). More details in [makefile-usage](#makefile-usage).
 - [Dockerfile](https://github.com/crunchdao/desci/blob/main/docker/Dockerfile) for your package.
 - Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/). You will only [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates).
 - Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/crunchdao/desci/blob/main/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
@@ -41,8 +41,7 @@
 ### Open source community features
 
 - Ready-to-use [Pull Requests templates](https://github.com/crunchdao/desci/blob/main/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/crunchdao/desci/tree/main/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
-- [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/crunchdao/desci/blob/main/.github/.stale.yml).
+- Files such as `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
 ## Installation
@@ -115,7 +114,7 @@ make pre-commit-install
 <summary>3. Codestyle</summary>
 <p>
 
-Automatic formatting uses `pyupgrade`, `isort` and `black`.
+Automatic formatting uses `pyupgrade`, `isort`, and `black`.
 
 ```bash
 make codestyle
@@ -132,7 +131,7 @@ make check-codestyle
 
 > Note: `check-codestyle` uses `isort`, `black` and `darglint` library
 
-Update all dev libraries to the latest version using one comand
+Update all dev libraries to the latest version using one command
 
 ```bash
 make update-dev-deps
@@ -188,7 +187,7 @@ make test
 <summary>7. All linters</summary>
 <p>
 
-Of course there is a command to ~~rule~~ run all linters in one:
+Of course, there is a command to ~~rule~~ run all linters in one:
 
 ```bash
 make lint
@@ -255,7 +254,7 @@ Remove .mypycache
 make mypycache-remove
 ```
 
-Or to remove all above run:
+Or to remove all of the above, run:
 
 ```bash
 make cleanup
