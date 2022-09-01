@@ -3,6 +3,7 @@ title: ""
 author: []
 date: ""
 lang: "en"
+colorlinks: true,
 titlepage: true,
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "360049"
@@ -76,7 +77,6 @@ Finally, an intuitive User Interface will be set up at [desci.crunchdao.com](htt
 It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self-describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
 Finally, by removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education. If you are reading this from the PDF, you are missing some nice animations about chaos theory and stochastic modeling. The good news is, we already have a preliminary HTML version of this paper [here](https://htmlpreview.github.io/?https://github.com/crunchdao/desci/blob/main/paper/paper.html): enjoy!
-<!--sudo docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md -s --mathml --data-dir=./data/ --resource-path=./figures/ --bibliography ./paper.bib -o paper.html -->
 
 <!-- ![](figures/0028.gif)
 ![](figures/0029.gif)
