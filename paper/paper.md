@@ -116,6 +116,7 @@ CrunchDAO is a Decentralized Autonomous Organization of scientists making use of
 
 - [Zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof)
 
+
 ## Metamodeling Layer 1 {#mml1}
 
 There is a need to align the incentives of the single tournament players with the DAO as a whole. Tournament players cannot build their model on some data aiming at maximizing a correlation score when the DAO pays based on a different metric: if we want to treat tournament players fairly, we have to give them access to the metamodel, so that they can adjust their goal to the maximization of the True Contribution. We are assuming that such metric is the best objective, at the tournament level, that maximizes the long-term performance of the signal produced by the DAO. Moreover, there is alredy a problematic assumption in splitting this optimization problem into a sequence of two optimization problems. More research is necessary.
