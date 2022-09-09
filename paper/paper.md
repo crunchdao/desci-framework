@@ -21,13 +21,15 @@ footer-right: "Matteo Manzi"
 |----------|:---------------:|:-----------------:|------------|
 | Matteo Manzi | matteoettam09 | matteoettam09#9362 | 2022/08/27 |
 |Enzo Caceres | Caceresenzo | Enzo Caceres#4224 | 2022/08/28 |
-|Someone | Someting | SOmething else | Today|
+|||||
 |||||
 |||||
 
 \newpage
 
 # A Decentralized Science (DeSci) Framework 
+
+## 
 
 ## DeSci: an Overview
 
@@ -98,15 +100,13 @@ CrunchDAO is a Decentralized Autonomous Organization of scientists making use of
 
 ## The Tournament
 
-- Scoring function: [Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient), OWEN
-
 ### Data 
 
-- Quantization & Anonimization.
+- Quantization & Obfuscation.
 
-- [Weavechain](https://www.weavechain.com/): [arweave](https://www.arweave.org/) and [filecoin](https://filecoin.io/) make use of IPFS, they do not. Data do not go on chain. 
+- [Weavechain](https://www.weavechain.com/): [arweave](https://www.arweave.org/) and [filecoin](https://filecoin.io/) make use of IPFS, they do not. Data do not go on chain. [BeekeperAI](https://www.beekeeperai.com/)
 
-- Homomorphic Encryption links [here](https://github.com/microsoft/EVA) and [here](https://github.com/microsoft/SEAL), CKKS [here](https://blog.openmined.org/ckks-explained-part-1-simple-encoding-and-decoding/).
+- Homomorphic Encryption links [here](https://github.com/microsoft/EVA), [here](https://github.com/microsoft/SEAL), [here](https://www.zama.ai/) CKKS [here](https://blog.openmined.org/ckks-explained-part-1-simple-encoding-and-decoding/).
 
 - [Federated learning](https://en.wikipedia.org/wiki/Federated_learning) + [Ocean Protocol](https://oceanprotocol.com/) for new datasets.
 
@@ -115,6 +115,11 @@ CrunchDAO is a Decentralized Autonomous Organization of scientists making use of
 - [PySyft](https://github.com/OpenMined/PySyft): Syft allows a Data Scientist to ask questions about a dataset and, within privacy limits set by the data owner, get answers to those questions, all without obtaining a copy of the data itself.
 
 - [Zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof)
+
+### Targets
+
+- [Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)
+- OWEN
 
 
 ## Metamodeling Layer 1 {#mml1}

@@ -4,33 +4,50 @@ on:
   push:
     branches:
     - main
-    
+  pull_request:
+    branches:
+    - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Build PDF and HTML paper
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+      # Give an id to the step, so we can reference it later
+      id: check_file_changed
       run: |
-        docker pull crunchdao/desci-pandoc
-        docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib -o paper.pdf        
+        $diff = git diff --name-only HEAD^ HEAD
 
-    - name: Save Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: paper
-        path: |
-          paper/paper.pdf
-    
-    - name: Upload PDF to IPFS
-      uses: aquiladev/ipfs-action@master
-      with:
-        path: paper/paper.pdf
-        verbose: true
-        pin: true
-        pinName: crunchdao_desci_paper_pdf_${{ github.sha }}
-        service: filebase
-        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
-        filebaseKey: ${{ secrets.FILEBASE_KEY }}
-        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
+        $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        # Set the output named "docs_changed"
+        Write-Host "::set-output name=docs_changed::$HasDiff"
+
+      if: steps.check_file_changed.outputs.docs_changed == 'True'
+      - name: Build PDF and HTML paper
+        run: |
+          docker pull crunchdao/desci-pandoc
+          docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib -o paper.pdf        
+
+      - name: Save Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: paper
+          path: |
+            paper/paper.pdf
+      
+      - name: Upload PDF to IPFS
+        uses: aquiladev/ipfs-action@master
+        with:
+          path: paper/paper.pdf
+          verbose: true
+          pin: true
+          pinName: crunchdao_desci_paper_pdf_${{ github.sha }}
+          service: filebase
+          filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
+          filebaseKey: ${{ secrets.FILEBASE_KEY }}
+          filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
