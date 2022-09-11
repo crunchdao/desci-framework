@@ -1,7 +1,3 @@
-# desci paper
+# Tutorial
 
-In this folder, you can find all you need to contribute to the CrunchDAO research.
-
-## Guide
-
-Coming Soon!
+[![IMAGE ALT TEXT HERE](./figures/youtube_preview.png)](https://www.youtube.com/watch?v=tsPmvGHMxrk)
