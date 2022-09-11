@@ -4,13 +4,15 @@ on:
   push:
     branches:
     - main
-    
+  pull_request:
+    branches:
+    - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
     - name: Build PDF and HTML paper
       run: |
         docker pull crunchdao/desci-pandoc
@@ -22,7 +24,7 @@ jobs:
         name: paper
         path: |
           paper/paper.pdf
-    
+
     - name: Upload PDF to IPFS
       uses: aquiladev/ipfs-action@master
       with:
