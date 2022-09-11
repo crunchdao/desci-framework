@@ -17,6 +17,14 @@
 
 ## Description
 
+CrunchDAO is a Decentralized Autonomous Organization of scientists making use of collective intelligence to solve complex problems, powered by a solid tokeconomics.
+
+We are here proposing a Decentralized Science Framework, making use of git and IPFS, that enables every group of scientists to collaborate on a single Unit of Knowledge, avoiding the so-called tragedy of anticommons, using the principles of continuous integration/continuous delivery, in a way that also tackles the reproducibility crisis in science.
+
+The use of IPFS enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, it makes it possible to build around the concept of machine readability, and self describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
+
+Removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education.
+
 ## Installation
 
 [`Makefile`](https://github.com/crunchdao/desci/blob/main/Makefile) contains functions for faster development.
