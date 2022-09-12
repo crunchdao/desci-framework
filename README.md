@@ -25,6 +25,10 @@ The use of IPFS enables the integration and recognition of micropublications and
 
 Removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education.
 
+## Tutorial
+
+[![IMAGE ALT TEXT HERE](./paper/figures/youtube_preview.png)](https://www.youtube.com/watch?v=tsPmvGHMxrk)
+
 ## Installation
 
 [`Makefile`](https://github.com/crunchdao/desci/blob/main/Makefile) contains functions for faster development.

@@ -17,6 +17,7 @@ jobs:
       run: |
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib -o paper.pdf        
+        docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc presentation.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib --to beamer -o presentation.pdf
 
     - name: Save Artifact
       uses: actions/upload-artifact@v3

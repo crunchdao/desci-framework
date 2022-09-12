@@ -885,6 +885,7 @@ $endif$
 %% begin titlepage
 %%
 $if(beamer)$
+
 $else$
 $if(titlepage)$
 \begin{titlepage}
