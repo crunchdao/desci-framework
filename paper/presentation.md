@@ -86,22 +86,6 @@ Gottfried Wilhelm Leibniz, 1672
 
  ![](figures/leibniz.jpg)
 
-
-
-
-
-
-
-# DeSci in CrunchDAO
-
-CrunchDAO is interested in crowdsourcing research, not only alpha.
-
-- The tokeconomics will be expanded to include scientific contributions.
-
-- We are proposing a research framework in order to foster quality, speed, and transparency.
-
-- This framework will be a tool for the DAO in all the fields of science.
-
 # How to kickstart your project in 10 steps!
 
 - Step 1: Clone the *desci* repository and install the Python package;
@@ -114,10 +98,5 @@ CrunchDAO is interested in crowdsourcing research, not only alpha.
 - Step 8: Merge, get payed and generate the new version of the paper;
 - Step 9: Put it to IPFS;
 - Step 10: Share it with the DAO!
-
-
-# Next Steps
-
-Next steps for the paper and tokeconomics integration.
 
 # References
