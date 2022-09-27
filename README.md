@@ -42,16 +42,8 @@ Removing the need to write papers using PDFs, it is possible to integrate multim
 <summary>1. Install all dependencies and pre-commit hooks</summary>
 <p>
 
-Install requirements:
-
 ```bash
 make install
-```
-
-Pre-commit hooks could be installed after `git init` via
-
-```bash
-make pre-commit-install
 ```
 
 </p>
