@@ -23,7 +23,9 @@ We are here proposing a Decentralized Science Framework, making use of git and I
 
 The use of IPFS enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, it makes it possible to build around the concept of machine readability, and self describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
-Removing the need to write papers using PDFs, it is possible to integrate multimedia contents, fostering outreach and education.
+Removing the need to write papers using only PDFs, it is possible to integrate multimedia contents, fostering outreach and education.
+
+The latest PDF version of this repository can be accessed at [desci.crunchdao.com](https://desci.crunchdao.com/).
 
 ## Vision
 
