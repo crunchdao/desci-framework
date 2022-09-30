@@ -25,7 +25,7 @@ The use of IPFS enables the integration and recognition of micropublications and
 
 Removing the need to write papers using only PDFs, it is possible to integrate multimedia contents, fostering outreach and education.
 
-The latest PDF version of this repository can be accessed at [desci.crunchdao.com](https://desci.crunchdao.com/).
+The latest PDF version of this project, automatically generated with git every time a merge request is validated by CrunchDAO, can be accessed at [desci.crunchdao.com](https://desci.crunchdao.com/). We will soon setup a bounty system for working on the project and a voting system to approve/reject updates of the white paper.
 
 ## Vision
 
