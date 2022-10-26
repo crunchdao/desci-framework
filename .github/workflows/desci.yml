@@ -25,7 +25,7 @@ jobs:
         path: |
           paper/paper.pdf
           
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'  
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'  
     - name: Upload PDF to IPFS
       uses: aquiladev/ipfs-action@master
       with:
