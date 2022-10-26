@@ -1,0 +1,23 @@
+name: ipfs
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    needs: desci
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload PDF to IPFS
+      uses: aquiladev/ipfs-action@master
+      with:
+        path: paper/paper.pdf
+        verbose: true
+        pin: true
+        pinName: crunchdao_desci_paper_pdf_${{ github.sha }}
+        service: filebase
+        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
+        filebaseKey: ${{ secrets.FILEBASE_KEY }}
+        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
