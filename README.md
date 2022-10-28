@@ -17,7 +17,7 @@
 
 ## Description
 
-CrunchDAO is a Decentralized Autonomous Organization of scientists making use of collective intelligence to solve complex problems, powered by a solid tokeconomics.
+CrunchDAO is a Decentralized Autonomous Organization of scientists making use of collective intelligence to solve complex problems, powered by a tokenomics.
 
 We are here proposing a Decentralized Science Framework, making use of git and IPFS, that enables every group of scientists to collaborate on a single Unit of Knowledge, avoiding the so-called tragedy of anticommons, using the principles of continuous integration/continuous delivery, in a way that also tackles the reproducibility crisis in science.
 
