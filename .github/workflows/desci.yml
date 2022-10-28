@@ -14,26 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build PDF and HTML paper
+      if: github.actor != 'dependabot[bot]' 
       run: |
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib -o paper.pdf        
-        docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc presentation.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib --to beamer -o presentation.pdf
 
     - name: Save Artifact
+      if: github.actor != 'dependabot[bot]' 
       uses: actions/upload-artifact@v3
       with:
         name: paper
         path: |
           paper/paper.pdf
-
-    - name: Upload PDF to IPFS
-      uses: aquiladev/ipfs-action@master
-      with:
-        path: paper/paper.pdf
-        verbose: true
-        pin: true
-        pinName: crunchdao_desci_paper_pdf_${{ github.sha }}
-        service: filebase
-        filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
-        filebaseKey: ${{ secrets.FILEBASE_KEY }}
-        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
