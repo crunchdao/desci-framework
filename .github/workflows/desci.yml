@@ -14,11 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build PDF and HTML paper
+      if: github.actor != 'dependabot[bot]' 
       run: |
         docker pull crunchdao/desci-pandoc
         docker run --rm -v $PWD/paper:/paper crunchdao/desci-pandoc paper.md --from markdown --template="./template/Eisvogel.latex" --bibliography ./paper.bib -o paper.pdf        
 
     - name: Save Artifact
+      if: github.actor != 'dependabot[bot]' 
       uses: actions/upload-artifact@v3
       with:
         name: paper
