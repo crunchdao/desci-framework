@@ -913,15 +913,16 @@ $endif$
 $if(titlepage-background)$
 % The titlepage with a background image has other text spacing and text size
 {
+  \centering
   \setstretch{2}
   \vfill
-  \vskip -8em
-  \noindent {\huge \textbf{\textsf{$title$}}}
+  \vskip -3em
+  \noindent {\Huge \textbf{\textsf{$title$}}}
   $if(subtitle)$
   \vskip 1em
-  {\Large \textsf{$subtitle$}}
+  {\huge \textsf{$subtitle$}}
   $endif$
-  \vskip 2em
+  \vskip 7em
   \noindent {\Large \textsf{$for(author)$$author$$sep$, $endfor$} \vskip 0.6em \textsf{$date$}}
   \vfill
 }

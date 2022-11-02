@@ -1,7 +1,8 @@
 ---
-title: ""
-author: []
-date: ""
+title: "A DECENTRALIZED SCIENCE FRAMEWORK"
+subtitle: "BY CRUNCHDAO"
+author: [Matteo Manzi]
+date: "2022/08/27"
 lang: "en"
 colorlinks: true,
 titlepage: true,
