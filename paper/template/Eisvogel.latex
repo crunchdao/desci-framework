@@ -969,9 +969,11 @@ $if(beamer)$
 $endif$
 $if(abstract)$
 \vfill
-  \centering{\huge \textbf{\textsf{$title$}}}
+  \begin{center}
+  {\huge \textbf{\textsf{$title$}}}
   \vskip 1em
-  \centering{\Large \textbf{\textsf{abstract}}}
+  {\Large \textbf{\textsf{abstract}}}
+  \end{center}
 \begin{abstract}
 \noindent
 $abstract$
