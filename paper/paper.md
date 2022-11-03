@@ -47,7 +47,7 @@ One of the requirements here was to go beyond traditional peer review, using Web
 
 Other reference projects have been [PRINCIPIA](https://cordis.europa.eu/article/id/422224-principia-a-new-peer-review-platform-is-here) [[@principia]](https://arxiv.org/pdf/2008.09011.pdf) and the "[Peer Review](https://github.com/danielBingham/peerreview)" repository.
 
-Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/), building on Git and Ethereum to "enable developers to collaborate on software over a peer-to-peer network", [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens for science.
+Other interesting projects, in the space, are [Lateral](https://www.lateral.io/), working on the construction of knowledge graphs, [Radicle](https://radicle.xyz/) and [gitopia](https://gitopia.com/whitepaper.pdf), building on Git to enable decentralized code collaboration, [DeSci World](https://desci.world/), looking into the use of Non-Fungible Tokens for science.
 
 ## Design Choices
 
