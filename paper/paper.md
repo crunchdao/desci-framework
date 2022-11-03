@@ -17,6 +17,8 @@ footer-right: "CrunchDAO"
 abstract: "Decentralized science (DeSci) aims to build infrastructure for creating, reviewing, crediting, storing, and disseminating scientific knowledge using the Web3 stack. In order to maximize its efficiency and prevent the tragedy of anti-commons, CrunchDAO proposes here a set of tools and best practices for Research and Development in a Decentralized Autonomous Organization."
 ---
 
+\newpage
+
 # List of contributors
 
 | Full Name | Github @ | Discord @ | Date |
