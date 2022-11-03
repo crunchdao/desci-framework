@@ -12,8 +12,9 @@ titlepage-rule-height: 0
 titlepage-background: "./figures/cover.pdf"
 header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
-footer-left: "A Decentralized Science framework by CrunchDAO"
-footer-right: "Matteo Manzi"
+footer-left: "A Decentralized Science framework"
+footer-right: "CrunchDAO"
+abstract: "Decentralized science (DeSci) aims to build infrastructure for creating, reviewing, crediting, storing, and disseminating scientific knowledge using the Web3 stack. In order to maximize its efficiency and prevent the tragedy of anti-commons, CrunchDAO proposes here a set of tools and best practices for Research and Development in a Decentralized Autonomous Organization."
 ---
 
 # List of contributors
@@ -32,7 +33,7 @@ footer-right: "Matteo Manzi"
 
 ## DeSci: an Overview
 
-"[Decentralized Science (DeSci)](https://desci.com/roadmap), which recently came into play, refers to the communities of scientists, builders, advocates, and organizers that create infrastructure and advocate for distributed coordination to support scientific progress. It can advance the conditions of scientists worldwide and creates systems for scientists to recapture the value they create. Even in science, the success of a decentralized ecosystem depends on the community incentives structure and the microeconomy created around these incentives".
+"[Decentralized Science (DeSci)](https://ethereum.org/en/desci/), which recently came into play, refers to the communities of scientists, builders, advocates, and organizers that create infrastructure and advocate for distributed coordination to support scientific progress. It can advance the conditions of scientists worldwide and creates systems for scientists to recapture the value they create. Even in science, the success of a decentralized ecosystem depends on the community incentives structure and the microeconomy created around these incentives".
 
 In the setup of this framework, several existing projects have been used as references for guiding our design choices. While in our context this infrastructure should enable us to collaborate, to avoid the so-called [tragedy of the anticommons](https://en.wikipedia.org/wiki/Tragedy_of_the_anticommons), and always be reproducible, and this is a means for us as a DAO to perform well in the financial market, the scope of this project is much broader and its potential in the public sector should not be neglected. Worth mentioning, for example, [the General Index](https://archive.org/details/GeneralIndex), and [Impact Certificates](https://impactmarkets.io/).
 

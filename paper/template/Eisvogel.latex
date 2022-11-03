@@ -968,7 +968,12 @@ $if(beamer)$
 \frame{\titlepage}
 $endif$
 $if(abstract)$
+\vfill
+  \centering{\huge \textbf{\textsf{$title$}}}
+  \vskip 1em
+  \centering{\Large \textbf{\textsf{abstract}}}
 \begin{abstract}
+\noindent
 $abstract$
 \end{abstract}
 $endif$
