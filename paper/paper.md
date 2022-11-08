@@ -1,11 +1,11 @@
 ---
 title: "A DECENTRALIZED SCIENCE FRAMEWORK"
 subtitle: "BY CRUNCHDAO"
-author: [Matteo Manzi]
+author: [Matteo Manzi, Enzo Caceres]
 date: "2022/08/27"
 lang: "en"
-colorlinks: true,
-titlepage: true,
+colorlinks: true
+titlepage: true
 titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "360049"
 titlepage-rule-height: 0
@@ -17,21 +17,7 @@ footer-right: "CrunchDAO"
 abstract: "Decentralized science (DeSci) aims to build infrastructure for creating, reviewing, crediting, storing, and disseminating scientific knowledge using the Web3 stack. In order to maximize its efficiency and prevent the tragedy of anti-commons, CrunchDAO proposes here a set of tools and best practices for Research and Development in a Decentralized Autonomous Organization."
 ---
 
-\newpage
-
-# List of contributors
-
-| Full Name | Github @ | Discord @ | Date |
-|----------|:---------------:|:-----------------:|------------|
-| Matteo Manzi | matteoettam09 | matteoettam09#9362 | 2022/08/27 |
-|Enzo Caceres | Caceresenzo | Enzo Caceres#4224 | 2022/08/28 |
-|||||
-|||||
-|||||
-
-\newpage
-
-# A Decentralized Science (DeSci) Framework 
+# A Decentralized Science (DeSci) Framework
 
 ## DeSci: an Overview
 
