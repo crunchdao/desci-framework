@@ -34,7 +34,7 @@ classifiers = [  #! Update me
 [tool.poetry.dependencies]
 python = "^3.9"
 
-typer = {extras = ["all"], version = "^0.6.1"}
+typer = {extras = ["all"], version = "^0.7.0"}
 rich = "^12.5.1"
 
 [tool.poetry.dev-dependencies]
