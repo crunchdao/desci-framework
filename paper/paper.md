@@ -37,6 +37,12 @@ Other interesting projects, in the space, are [Lateral](https://www.lateral.io/)
 
 ## Design Choices
 
+### Hi Vishnu, this is a test!
+
+$$
+\alpha_x = 5^2
+$$
+
 We are here proposing a DeSci framework, making use of IPFS, that can help perform research, outreach, and education.
 
 The first requirement has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
