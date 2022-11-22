@@ -19,45 +19,44 @@ abstract: " To be added!"
 
 ## Introductiion
 
-Here we have two objectives, a performance measure that could determine how good a prediction is and a diversity measure that tells us how different the model will be. It is well-known that a blend (a weighted combination of a set of good and diverse models can beat even the best single prediction). So the goal is to make the tournament robust to Sybil attacks and reward originality.
+Holding a tournament like Crunchdao or Numerai is a multifaceted challenge. Here we have two objectives, a performance measure that could determine how good a prediction is and a diversity measure that tells us how different the model will be. It is well-known that a blend (a weighted combination of a set of excellent and diverse models can beat even the best single prediction). 
 
-To do this, we need to define two performance measures, one for how accurate a model is and the other for how different it is compared to other predictions.
-
-To block Sybil attacks, it is mandatory to make having multiple accounts costly and futile. One way to do it is to have each participant have skin in the game, lock some $CRUNCH in a smart contract, and reward/punish his model proportional to the amount of his stake. 
-The final meta-model would be the weighted average of all models based on their stakes. In mathematical terms, let's say we have $n$ participants and particpant $i$ ($P_u$) has staked $C_u$ Crunch tokens where $u$=1, 2, \ldots, $n$ so the amount of involvement of each participant in the metamodel is
+The tournament's other constraint is keeping the reward system robust to Sybil attacks. One way to do it is to make having multiple accounts costly and futile. One way to do it is to have each participant have skin in the game; he needs to lock some $CRUNCH in a smart contract and reward/punish his model proportional to the amount of his stake. 
+The final metamodel would be the weighted average of all models based on their stakes. In mathematical terms, let's say we have $n$ participants and participant $u$ ($P_u$) has staked $C_u$ Crunch tokens where $u$=1, 2, \ldots, $n$ so the amount of involvement of each participant in the metamodel is
 
 \begin{equation*}
 w_u = \frac{C_u}{\sum_{u=1}^{n}{C_u}}
 \end{equation*}
 
-The final meta model would be the weighted combination of the predictions submitted by participatnt. In this case if S~i~ represents prediction of P~i~ then final prediction (S) is 
+The final metamodel would be the weighted combination of the predictions submitted by participants. In this case if $S_u$ represents prediction of $P_u$ then final prediction ($S$) is 
 
 \begin{equation*}
 S = \sum_{u=1}^{n}{w_u S_u}
 \end{equation*}
 
+
 ## Performance Measure
 
-To determine how good a model is, we need to find a meaningful metric. We have to take into consideration two things regarding this metric:
+We need to find a meaningful metric to determine how good a model is. We have to take into consideration two things regarding this metric:
 
-* Firstly, it should vary in negative and positive ranges, for example $[-1, +1]$, because we need this metric for each prediction's burn/earn mechanism.
+* Firstly, it should vary in negative and positive ranges, for example, $[-1, +1]$, because we need this metric for each prediction's burn/earn mechanism.
 * Secondly, we should be able to clip it between a reasonable range because some models could have large ups and downs in the short term, but we need a model that will perform consistently for a long time. So, for example, we can clip values to be in $[-0.1, +0.1]$ or $[-0.2, +0.2]$ according to the dataset.
 
-For the metric, we can start with a simple candidate like the daily Spearman Rank Correlation averaged through a period  of time (for example, 30 or 60 days). Then, each model is rewarded based on its correction to the actual labels.  
+For the metric, we can start with a simple candidate like the daily Spearman Rank Correlation averaged through a period (for example, 30 or 60 days). Then, each model is rewarded based on its correction to the actual labels.  
 
-We can replace this metric in the future with a more complex one, given that it can be used for earning and burning users' stakes.
+We can replace this metric with a more complex one, given that it can be used for earning and burning users' stakes.
 
 
 ### Originality Measure
 
-Here we can use [Numerai's meta-model contribution (MMC) score](https://docs.numer.ai/tournament/metamodel-contribution). This score shows how much we gain by including a model in the final model and considering it can prevent heavily staked models from being more diverse so we don't end up with a few similar predictions dominating others. To calculate a user's (U) MMC for a given round we
+Here we can use [Numerai's metamodel contribution (MMC) score](https://docs.numer.ai/tournament/metamodel-contribution). This score shows how much we gain by including a model in the final model and considering it can prevent heavily staked models from being more diverse, so we don't end up with a few similar predictions dominating others. To calculate a user's (U) MMC for a given round we
 
- * select a random 67% of all staking users (with replacement)
- * calculate the stake weighted predictions of these users
- * transform both the stake weighted predictions, and u's model to be uniformly distributed
- * neutralize u's model with respect to the uniform stake weighted predictions
+ * Select a random 67% of all staking users (with replacement)
+ * calculate the stake-weighted predictions of these users
+ * transform both the stake-weighted predictions and u's model to be uniformly distributed
+ * neutralize u's model with respect to the uniform stake-weighted predictions
  * calculate the covariance between u's model and the targets
- * divide this value by 0.0841 (this step is to bring the expected score up to the same magnitude as correlation, this can skipped because we do not need it to be as the same scale as the correlations)
+ * divide this value by 0.0841 (this step is to bring the expected score up to the same magnitude as the correlation, this can be skipped because we do not need it to be on the same scale as the correlations)
  * the resultant value is an MMC score
  * repeat this whole process 20 times and keep the average MMC score 
 
@@ -67,10 +66,10 @@ So far, we have been proposing the same as the current metrics used in the Numer
 
 We treat the problem of combining these metrics as a multiobjective optimization problem where we have two objective functions to maximize. The objectives are
  
-* performance metric (PM) that determines how good a prediction is;
-* and diversity metric (MMC) that tells us how much we miss if we don't include a prediction in a meta-model.
+* performance metric ($PM$) that determines how good a prediction is;
+* and diversity metric ($MMC$) that tells us how much we miss if we don't include a prediction in a metamodel.
 
-There is no single solution to this problem; instead, there are a set of possible solutions called the [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_front). To find the Pareto frontier for this problem, we need to define a few things: 
+There is no single solution to this problem; instead, there are possible solutions called the [Pareto Frontier](https://en.wikipedia.org/wiki/Pareto_front). To find the Pareto frontier for this problem, we need to define a few things: 
 
 * ($PM_u$, $MMC_u$) for user $u$ represents a vector with two elements (each element shows an evaluated objective)
 * In a maximization scenario with $k$ objective functions ($f_i(x)$, where $i \in {1, …, k}$), a feasible solution $x_1 \in X$ is said to (Pareto) dominate another solution $x_2 \in X$, if
@@ -80,14 +79,13 @@ There is no single solution to this problem; instead, there are a set of possibl
    &\exists i \in {1, …,k} , f_i(x_1) > f_i (x_2).
 \end{align*}
 
-* A Pareto optimal solution is a vector to non-dominated vectors in the set of all feasible solutions.
-
+* A Pareto optimal solution is a non-dominated vector in all feasible solutions.
 
 ## The Proposed Rewarding Method 
 
 For a user $u$, we calculate the ($PM\_u$, $MMC\_u$) and then find the Pareto optimal solutions in the set of all users, so we end up with two sets of dominated and not-dominated solution vectors. Finally, based on the result, we multiply the staking of users with Pareto optimal solutions with a value called $\alpha$ (called the rewarding factor) where $\alpha > 1$. This parameter determines how much we value having high values for both objectives simultaneously rather than just one objective.   
 
-If a prediction is a Pareto optimal, then its stake value is multiplied by $\alpha$ (for the user u with $C_u$ amount of Crunch tokens, if his model is not dominated, his staking is multiplied by $\alpha$ so his new $C_u$ would be $C_{u-new}=\alpha \times C_u$  ), so users are motivated to increase the accuracy and diversity of their model at the same time. This also keeps the door open for users with not large stakings to participate because if others do not dominate their predictions, their rewards are boosted as if they are given bonuses for their performance. If we do not consider this factor, after a while, the whole prize pool will be swept by whales with large amount of stakings. Also, with this mechanism, the population of predictions as a whole is motivated to move towards more diverse and good solutions and on average both of these will be improved through time. 
+For the user u with $C_u$ amount of Crunch tokens, if his model is not dominated, his staking is multiplied by $\alpha$ so his new $C_u$ would be $C_{u-new}=\alpha \times C_u$  ). This way, users are motivated to increase the accuracy and diversity of their model at the same time. It also keeps the door open for users with not large stakings to participate because if others do not dominate their predictions, their rewards are boosted as if they are given bonuses for their performance. If we do not consider this factor, the whole prize pool will be swept by whales with large amounts of stakings after a while. Additionally, with this mechanism, the population of predictions is motivated to move towards more diverse and promising solutions.
 
  
 ##  Attracting and Keeping the Best
@@ -96,7 +94,7 @@ The way that rewarding works makes it possible for the DAO to reward  the best (
 
 ## Prize Pool Consideration
 
-
+At the start, we have a prize pool of $C$ crunches each month (or week, or any other span of time), and each person's reward/punishment is calculated proportionally to his stakes. 
 
 ## Alpha Provider Tournament
 
