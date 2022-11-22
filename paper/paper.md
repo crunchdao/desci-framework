@@ -12,30 +12,27 @@ titlepage-background: "./figures/cover.pdf"
 header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
 footer-left: "CrunchDAO Staking Proposal"
-abstract: " To be added!"
 ---
 
-# Staking, Challenges and Solutions
+# Introductiion
 
-## Introductiion
+Holding a tournament like Crunchdao or Numerai is a multifaceted challenge. Here we have two objectives, a performance measure that could determine how good a prediction is and a diversity measure that tells us how different the model will be. It is well-known that a blend (a weighted combination of a set of excellent and diverse models) can beat even the best single prediction. 
 
-Holding a tournament like Crunchdao or Numerai is a multifaceted challenge. Here we have two objectives, a performance measure that could determine how good a prediction is and a diversity measure that tells us how different the model will be. It is well-known that a blend (a weighted combination of a set of excellent and diverse models can beat even the best single prediction). 
-
-The tournament's other constraint is keeping the reward system robust to Sybil attacks. One way to do it is to make having multiple accounts costly and futile. One way to do it is to have each participant have skin in the game; he needs to lock some $CRUNCH in a smart contract and reward/punish his model proportional to the amount of his stake. 
+The tournament's other constraint is keeping the reward system robust to Sybil attacks. One way to do it is to make having multiple accounts costly and futile. In other words to have each participant have skin in the game. In this scenario, the participant needs to lock some $CRUNCH in a smart contract and reward/punish his model proportional to the amount of his stake. 
 The final metamodel would be the weighted average of all models based on their stakes. In mathematical terms, let's say we have $n$ participants and participant $u$ ($P_u$) has staked $C_u$ Crunch tokens where $u$=1, 2, \ldots, $n$ so the amount of involvement of each participant in the metamodel is
 
 \begin{equation*}
 w_u = \frac{C_u}{\sum_{u=1}^{n}{C_u}}
 \end{equation*}
 
-The final metamodel would be the weighted combination of the predictions submitted by participants. In this case if $S_u$ represents prediction of $P_u$ then final prediction ($S$) is 
+The final metamodel would be the weighted combination of the predictions submitted by participants. In this case. If $S_u$ represents prediction of $P_u$ then final prediction ($S$) is 
 
 \begin{equation*}
 S = \sum_{u=1}^{n}{w_u S_u}
 \end{equation*}
 
 
-## Performance Measure
+# Performance Measure
 
 We need to find a meaningful metric to determine how good a model is. We have to take into consideration two things regarding this metric:
 
@@ -47,20 +44,20 @@ For the metric, we can start with a simple candidate like the daily Spearman Ran
 We can replace this metric with a more complex one, given that it can be used for earning and burning users' stakes.
 
 
-### Originality Measure
+# Originality Measure
 
-Here we can use [Numerai's metamodel contribution (MMC) score](https://docs.numer.ai/tournament/metamodel-contribution). This score shows how much we gain by including a model in the final model and considering it can prevent heavily staked models from being more diverse, so we don't end up with a few similar predictions dominating others. To calculate a user's (U) MMC for a given round we
+Here we can use [Numerai's metamodel contribution (MMC) score](https://docs.numer.ai/tournament/metamodel-contribution). This score shows how much we gain by including a model in the final model and considering it can prevent heavily staked models from being more diverse, so we don't end up with a few similar predictions dominating others. To calculate a user's ($u$) $MMC$ for a given round we
 
  * Select a random 67% of all staking users (with replacement)
  * calculate the stake-weighted predictions of these users
- * transform both the stake-weighted predictions and u's model to be uniformly distributed
- * neutralize u's model with respect to the uniform stake-weighted predictions
+ * transform both the stake-weighted predictions and $u$'s model to be uniformly distributed
+ * neutralize $u$'s model with respect to the uniform stake-weighted predictions
  * calculate the covariance between u's model and the targets
  * divide this value by 0.0841 (this step is to bring the expected score up to the same magnitude as the correlation, this can be skipped because we do not need it to be on the same scale as the correlations)
- * the resultant value is an MMC score
- * repeat this whole process 20 times and keep the average MMC score 
+ * the resultant value is an $MMC$ score
+ * repeat this whole process 20 times and keep the average $MMC$ score 
 
-## Rewarding as a Multi-objective Optimization Problem
+# Rewarding as a Multi-objective Optimization Problem
 
 So far, we have been proposing the same as the current metrics used in the Numerai tournament. However, in Numerai, after calculating the performance metric (they call it $TC$) and $MMC$, users can pick a combination of these scores to determine their rewards or punishment. For example, one can choose $1 \times TC$ or $TC + 2 \times MMC$ as a multiplier for his stakings. Here we propose to use another method. 
 
@@ -79,35 +76,92 @@ There is no single solution to this problem; instead, there are possible solutio
    &\exists i \in {1, …,k} , f_i(x_1) > f_i (x_2).
 \end{align*}
 
-* A Pareto optimal solution is a non-dominated vector in all feasible solutions.
+* A Pareto optimal solution is a non-dominated vector in the vector space of all feasible solutions.
 
 ## The Proposed Rewarding Method 
 
 For a user $u$, we calculate the ($PM\_u$, $MMC\_u$) and then find the Pareto optimal solutions in the set of all users, so we end up with two sets of dominated and not-dominated solution vectors. Finally, based on the result, we multiply the staking of users with Pareto optimal solutions with a value called $\alpha$ (called the rewarding factor) where $\alpha > 1$. This parameter determines how much we value having high values for both objectives simultaneously rather than just one objective.   
 
-For the user u with $C_u$ amount of Crunch tokens, if his model is not dominated, his staking is multiplied by $\alpha$ so his new $C_u$ would be $C_{u-new}=\alpha \times C_u$  ). This way, users are motivated to increase the accuracy and diversity of their model at the same time. It also keeps the door open for users with not large stakings to participate because if others do not dominate their predictions, their rewards are boosted as if they are given bonuses for their performance. If we do not consider this factor, the whole prize pool will be swept by whales with large amounts of stakings after a while. Additionally, with this mechanism, the population of predictions is motivated to move towards more diverse and promising solutions.
+For the user $u$ with $C_u$ amount of Crunch tokens, if his model is not dominated, his staking is multiplied by $\alpha$ so his new $C_u$ would be $C_{u-new}=\alpha \times C_u$ ). This way, users are motivated to increase the accuracy and diversity of their model at the same time. It also keeps the door open for users with not large stakings to participate because if others do not dominate their predictions, their rewards are boosted as if they are given bonuses for their performance. If we do not consider this factor, the whole prize pool will be swept by whales with large amounts of stakings after a while. Additionally, with this mechanism, the population of predictions is motivated to move towards more diverse and promising solutions.
 
  
-##  Attracting and Keeping the Best
+#  Attracting and Keeping the Best
 
 The way that rewarding works makes it possible for the DAO to reward  the best (Pareto Optimal) predictions and the users that submmtted them by adjusting $\alpha$, for example an $\alpha=4$ makes it possible for a good user to quadraple his stakes even if he does not have a lot to stake compared to whales. 
 
-## Prize Pool Consideration
+# Prize Pool Consideration
 
-At the start, we have a prize pool of $C$ crunches each month (or week, or any other span of time), and each person's reward/punishment is calculated proportionally to his stakes. 
+At the start, we have a prize pool of $C$ crunches each month (or week, daily, or any other span of time), and each person's reward/punishment is calculated proportionally to his stakes. 
 
-## Alpha Provider Tournament
+# Alpha Provider Tournament
 
 The same ideas here can be used for the alpha generation tournament. Alpha is just like any other prediction!
 
-## Summary
+# Summary
 
-* We will currently use the average correlation function for the performance metric. Still, in the future, as long as we can burn and earn, we can replace the performance measure with something like TC from Numerai or anything else.
-* We are using the same originality measure from the numeral, and we can replace it with any other objects in the future. 
+* We will currently use the average correlation function for the performance metric. Still, in the future, as long as we can burn and earn, we can replace the performance measure with something like TC from Numerai or anything else. At the moment we can start with a simple the averaged Spearman Rank Correlation in a period of time.
+* We will be using the same originality measure from the numeral, and we can replace it with any other objects in the future. 
 * The way the reward system works based on staking makes Sybil attack impossible.
 * Boosting the payouts based on Pareto optimality is very simple and only needs one parameter to tweak. It also motivates small-time stakers to take their chance in the game. 
 * Using Pareto optimality also allows the DAO to add new objectives in the future if it sees fit. 
-* Payouts are done in cycles and the prize pool is divided by the number of datasets and each dataset has its own payout.  
+* Payouts are done in cycles and the prize pool is capped to a certain amount and participants are paid based on their perfromance and stakes.
+
+# Appendix
+
+As a simple example, a piece of code is depicted below that shows how to calculate the Pareto Front for a population of 200 participants with randomly generated objective values:
+
+```python
+
+import pandas as pd
+import numpy as np
+
+number_of_users = 200 # number of participants
+lowerbound_pm = -0.1 # lower bound for performance scores
+upperbound_pm = 0.1 # upper bound for performance scores
+
+lowerbound_mmc = -1 # lower bound for diversity scores
+upperbound_mmc = 1 # upper bound for diversity scores
+
+scores = pd.DataFrame({"PM": np.random.rand(number_of_users) * (upperbound_pm - lowerbound_pm) + lowerbound_pm})
+scores['MMC'] = np.random.rand(number_of_users) * (upperbound_mmc - lowerbound_mmc) + lowerbound_mmc 
+
+def keep_efficient(pts):
+    #https://stackoverflow.com/questions/32791911/fast-calculation-of-pareto-front-in-python
+    'returns Pareto efficient row subset of pts'
+    # sort points by decreasing sum of coordinates
+    pts = pts[pts.sum(1).argsort()[::-1]]
+    # initialize a boolean mask for undominated points
+    # to avoid creating copies each iteration
+    undominated = np.ones(pts.shape[0], dtype=bool)
+    for i in range(pts.shape[0]):
+        # process each point in turn
+        n = pts.shape[0]
+        if i >= n:
+            break
+        # find all points not dominated by i
+        # since points are sorted by coordinate sum
+        # i cannot dominate any points in 1,...,i-1
+        undominated[i+1:n] = (pts[i+1:] >= pts[i]).any(1) 
+        # keep points undominated so far
+        pts = pts[undominated[:n]]
+    return pts
+
+# Fairly fast for many datapoints, less fast for many costs, somewhat readable
+def is_pareto_efficient_simple(costs):
+    """
+    Find the pareto-efficient points
+    :param costs: An (n_points, n_costs) array
+    :return: A (n_points, ) boolean array, indicating whether each point is Pareto efficient
+    """
+    is_efficient = np.ones(costs.shape[0], dtype = bool)
+    for i, c in enumerate(costs):
+        if is_efficient[i]:
+            is_efficient[is_efficient] = np.any(costs[is_efficient]<c, axis=1)  # Keep any point with a lower cost
+            is_efficient[i] = True  # And keep self
+    return is_efficient
+ 
+pareto_optimal_indices = is_pareto_efficient_simple(-scores[['PM', 'MMC']].values) # code is for a minization problem (assumes that objectives are costs) so we have a negetive sign behind the scores!
 
 
+```
 
