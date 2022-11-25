@@ -1,7 +1,7 @@
 ---
 title: "A DECENTRALIZED SCIENCE FRAMEWORK"
 subtitle: "BY CRUNCHDAO"
-author: [Matteo Manzi, Enzo Caceres]
+author: [Matteo Manzi, Enzo Caceres, "0x84849160b0c897088f406254493aafb425461296"]
 date: "2022/08/27"
 lang: "en"
 colorlinks: true
