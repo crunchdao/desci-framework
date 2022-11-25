@@ -41,7 +41,7 @@ We are here proposing a DeSci framework, making use of IPFS, that can help perfo
 
 The first requirement has been to expose the user as little as possible to LaTeX, giving the possibility to write in Markdown, a language developed by John Gruber and Aaron Swartz: the backend takes care of generating the unit of knowledge (not necessarily a PDF), using *pandoc*.
 
-The paper backend lives in [this repository](https://github.com/crunchdao/desci) also containing a Python package: in this way, the symbiosys between codes and plain language can be leveraged to foster reproducibility. For example, there is a command called ```desci helloplot```:
+The paper backend lives in [this repository](https://github.com/crunchdao/desci-framework) also containing a Python package: in this way, the symbiosys between codes and plain language can be leveraged to foster reproducibility. For example, there is a command called ```desci helloplot```:
 
 ```python
     """Hello Plot."""
@@ -61,7 +61,7 @@ The paper is generated, using a [docker image](https://hub.docker.com/r/crunchda
 
 In fact, currently, scientists must be trusted to provide a true and useful representation of their research results in their final publication; blockchain would make much larger parts of the research cycle open to scientific self-correction. This bears the potential to be a technical solution to the current reproducibility crisis in science and could reduce waste and make more research results true [@Bartling2019].
 
-Finally, an intuitive User Interface will be set up at [desci.crunchdao.com](https://desci.crunchdao.com/): contributors of these units of knowledge won't have to be skilled software developers. If you nevertheless prefer to work on your editor, you can open a pull request at the public repository \url{https://github.com/crunchdao/desci}.
+Finally, an intuitive User Interface will be set up at [desci.crunchdao.com](https://desci.crunchdao.com/): contributors of these units of knowledge won't have to be skilled software developers. If you nevertheless prefer to work on your editor, you can open a pull request at the public repository \url{https://github.com/crunchdao/desci-framework}.
 
 It is therefore possible to make use of IPFS to create an immutable copy of each version [@Tenorio2018]: the IPFS nodes mirror the evolution of the main *git* branch. This enables the integration and recognition of micropublications and the setup of a retroactive funding framework. Moreover, this makes it possible to build around the concept of machine readability, and self-describing metadata, as the technology has the capacity to make digital goods immutable, transparent, externally provable, decentralized, and distributed.
 
