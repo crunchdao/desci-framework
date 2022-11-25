@@ -1,4 +1,4 @@
-# Crunch DeSci
+[![IMAGE ALT TEXT HERE](./paper/figures/Logo-DeSci.png)](https://www.youtube.com/watch?v=NLCy99WyIc0&t=665s)
 
 <div align="center">
 
