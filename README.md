@@ -1,4 +1,4 @@
-# desci
+# Crunch DeSci
 
 <div align="center">
 
